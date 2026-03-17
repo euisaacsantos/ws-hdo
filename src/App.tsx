@@ -43,17 +43,17 @@ export default function App() {
     <div className="min-h-screen bg-brand-navy text-brand-text font-sans selection:bg-brand-gold selection:text-brand-navy">
       
       {/* Top Bar */}
-      <div className="bg-gradient-to-r from-[#19427B] to-[#061933] border-b border-white/10 py-3 px-4 text-xs md:text-sm tracking-widest uppercase z-50 relative">
-        <div className="max-w-[1140px] mx-auto flex flex-col md:flex-row justify-center items-center gap-2 md:gap-6">
-        <span className="text-[16px] font-bold text-white flex items-center gap-2">
-          <img src="/assets/CALENDARIO BRANCO.svg" alt="" className="h-[16px] w-auto" />
-          28 e 29 de março, às 09h
-        </span>
-        <span className="hidden md:inline text-white">|</span>
-        <span className="text-[16px] font-bold">
-          <span className="text-brand-gold">O lote de ingressos encerra em </span>
-          <span className="text-white bg-white/10 px-3 py-1 rounded-md">{formatTime(timeLeft.days)}d : {formatTime(timeLeft.hours)}h : {formatTime(timeLeft.minutes)}m : {formatTime(timeLeft.seconds)}s</span>
-        </span>
+      <div className="bg-gradient-to-r from-[#19427B] to-[#061933] border-b border-white/10 py-3 md:py-3 px-4 text-xs md:text-sm tracking-widest uppercase z-50 relative">
+        <div className="max-w-[360px] md:max-w-[1140px] mx-auto flex flex-col md:flex-row items-center gap-1 md:gap-6">
+          <span className="text-[11px] md:text-[16px] font-bold text-white flex items-center gap-2">
+            <img src="/assets/CALENDARIO BRANCO.svg" alt="" className="h-[11px] md:h-[16px] w-auto" />
+            28 e 29 de março, às 09h
+          </span>
+          <span className="hidden md:inline text-white">|</span>
+          <div className="flex flex-col md:flex-row items-center gap-1 md:gap-2 text-[11px] md:text-[16px] font-bold">
+            <span className="text-brand-gold">O lote de ingressos encerra em</span>
+            <span className="text-white bg-white/10 px-3 py-1 rounded-md">{formatTime(timeLeft.days)}d : {formatTime(timeLeft.hours)}h : {formatTime(timeLeft.minutes)}m : {formatTime(timeLeft.seconds)}s</span>
+          </div>
         </div>
       </div>
 
@@ -61,20 +61,19 @@ export default function App() {
       <main className="relative z-10 [&>section+section]:mt-0">
         
         {/* 1ª DOBRA - Hero */}
-        <section className="pt-20 pb-24 px-6 bg-white md:bg-[url('/assets/BG1%20DESKTOP.png')] md:bg-cover md:bg-[center_top_-80px] md:bg-no-repeat">
-          <div className="max-w-[1140px] mx-auto text-left flex flex-col items-start">
-          <img src="/assets/LOGO.svg" alt="Workshop A Habilidade de Ouro" className="mb-12 h-16 w-auto" />
+        <section className="pt-[260px] md:pt-20 pb-24 px-6 bg-[url('/assets/BG1%20MOBILE.png?v=2')] bg-cover bg-[center_top_-30px] bg-no-repeat md:bg-[url('/assets/BG1%20DESKTOP.png')] md:bg-cover md:bg-[center_top_-80px] md:bg-no-repeat">
+          <div className="max-w-[360px] md:max-w-[1140px] mx-auto text-center md:text-left flex flex-col items-center md:items-start">
+          <img src="/assets/LOGO.svg" alt="Workshop A Habilidade de Ouro" className="mb-12 h-16 w-auto hidden md:block" />
 
-          <h1 className="text-[40px] font-serif text-[#081E3B] leading-[1.0] mb-5 max-w-4xl">
-            O problema da sua vida profissional<br/> já não é mais <span className="italic text-brand-gold">falta de competência.</span><br/>
-            <span className="font-medium">É nunca ter aprendido a moldar<br/> o comportamento humano.</span>
+          <h1 className="text-[30px] md:text-[40px] font-serif text-[#081E3B] leading-[1.0] mb-5 max-w-4xl">
+            O problema da sua vida profissional<span className="hidden md:inline"><br/></span> já não é mais <span className="italic text-brand-gold">falta de competência.</span><span className="hidden md:inline"><br/></span> <span className="font-medium">É nunca<br className="md:hidden" /> ter aprendido a moldar<span className="hidden md:inline"><br/></span> o comportamento humano.</span>
           </h1>
 
-          <p className="text-[20px] text-[#081E3B]/70 max-w-3xl mb-4 leading-[1.3] font-normal">
-            Participe de um <strong className="font-bold text-[#081E3B]">treinamento de 2 dias</strong> para desenvolver<br/> a habilidade que a faculdade nunca te ensinou, mas<br/> é a que determina o quanto sua técnica realmente<br/> gera resultado: <strong className="font-bold text-[#081E3B]">a habilidade de guiar pessoas.</strong>
+          <p className="text-[18px] md:text-[20px] text-[#081E3B]/70 max-w-3xl mb-4 leading-[1.3] font-normal">
+            Participe de um <strong className="font-bold text-[#081E3B]">treinamento de 2 dias</strong> para desenvolver<br className="hidden md:inline" /> a habilidade que a faculdade nunca te ensinou, mas<br className="hidden md:inline" /> é a que determina o quanto sua técnica realmente<br className="hidden md:inline" /> gera resultado: <strong className="font-bold text-[#081E3B]">a habilidade de guiar pessoas.</strong>
           </p>
 
-          <div className="flex flex-wrap justify-start items-center gap-3 mb-6 text-sm md:text-base text-[#081E3B]/80 font-medium tracking-wide border border-[#CED2D8] rounded-md px-4 py-2">
+          <div className="flex flex-nowrap justify-center md:justify-start items-center gap-3 mb-6 text-xs md:text-base text-[#081E3B]/80 font-medium tracking-wide border border-[#CED2D8] rounded-md px-4 py-2">
             <div className="flex items-center gap-2">
               <img src="/assets/CALENDARIO GOLD.svg" alt="" className="h-5 w-auto" />
               28 e 29 de março, às 09h
@@ -94,7 +93,7 @@ export default function App() {
 
         {/* 2ª DOBRA - Mentors */}
         <section className="py-16 px-6 bg-[url('/assets/BG%20BASE%20DESKTOP.png')] bg-cover bg-center bg-no-repeat border-y border-white/5">
-          <div className="max-w-[1140px] mx-auto">
+          <div className="max-w-[360px] md:max-w-[1140px] mx-auto">
             <h2 className="text-3xl md:text-[40px] font-serif text-center text-white mb-10">
               Conheça os seus mentores no<br/>
               <span className="italic text-brand-gold">Workshop: A Habilidade de Ouro</span>
@@ -195,7 +194,7 @@ export default function App() {
 
         {/* 3ª DOBRA - The Gap */}
         <section className="py-16 px-6 bg-white">
-          <div className="max-w-[1140px] mx-auto text-center">
+          <div className="max-w-[360px] md:max-w-[1140px] mx-auto text-center">
           <h2 className="text-3xl md:text-[40px] font-serif text-[#081E3B] mb-10 text-center">
             O que essas pessoas vão te ensinar nos dias 28 e 29 de março:
           </h2>
@@ -240,7 +239,7 @@ export default function App() {
 
         {/* 4ª DOBRA - Schedule */}
         <section className="py-16 px-6 bg-[url('/assets/BG%20BASE%20DESKTOP.png')] bg-cover bg-center bg-no-repeat" style={{transform: 'scaleX(-1)'}}>
-          <div className="max-w-[1140px] mx-auto" style={{transform: 'scaleX(-1)'}}>
+          <div className="max-w-[360px] md:max-w-[1140px] mx-auto" style={{transform: 'scaleX(-1)'}}>
             <h2 className="text-3xl md:text-[40px] font-serif text-center text-white mb-10">
               Cronograma oficial
             </h2>
@@ -350,7 +349,7 @@ export default function App() {
 
         {/* 5ª DOBRA - Target Audience */}
         <section className="pt-16 pb-16 px-6 bg-white">
-          <div className="max-w-[1140px] mx-auto">
+          <div className="max-w-[360px] md:max-w-[1140px] mx-auto">
           <h2 className="text-3xl md:text-[40px] font-serif text-center text-[#081E3B] mb-10">
             Para quem é o <span className="italic text-brand-gold">Workshop A Habilidade de Ouro?</span>
           </h2>
@@ -388,7 +387,7 @@ export default function App() {
 
         {/* 6ª DOBRA - Offer */}
         <section className="py-24 px-6 bg-brand-navy bg-[url('/assets/BG%20OFERTA%20DESKTOP.png')] bg-cover bg-[center_bottom_-50px] bg-no-repeat">
-          <div className="max-w-[1140px] mx-auto">
+          <div className="max-w-[360px] md:max-w-[1140px] mx-auto">
           <div className="max-w-[520px] ml-16 bg-brand-navy-light border border-brand-gold/30 rounded-3xl px-5 py-8 text-center shadow-[0_0_50px_rgba(207,168,97,0.1)] relative overflow-hidden">
             
             {/* Decorative elements */}
@@ -433,7 +432,7 @@ export default function App() {
 
         {/* 7ª DOBRA - Recordings Objection */}
         <section className="pt-8 pb-16 px-6 bg-gradient-to-b from-brand-navy-light to-brand-navy">
-          <div className="max-w-[1140px] mx-auto text-center">
+          <div className="max-w-[360px] md:max-w-[1140px] mx-auto text-center">
           <h2 className="text-3xl md:text-[40px] font-serif text-white mb-8">
             “E se eu não puder estar ao vivo?”
           </h2>
@@ -468,7 +467,7 @@ export default function App() {
         </section>
 
         {/* 9ª DOBRA - FAQ */}
-        <section className="py-16 px-6 max-w-[1140px] mx-auto">
+        <section className="py-16 px-6 max-w-[360px] md:max-w-[1140px] mx-auto">
           <h2 className="text-3xl md:text-[40px] font-serif text-center text-white mb-10">
             Perguntas Frequentes
           </h2>
@@ -497,7 +496,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="border-t border-white/10 py-12 px-6 text-center text-sm text-white/40">
-        <div className="max-w-[1140px] mx-auto">
+        <div className="max-w-[360px] md:max-w-[1140px] mx-auto">
           <p>Copyright © 2026 Carol Rache – Todos os direitos reservados</p>
         </div>
       </footer>

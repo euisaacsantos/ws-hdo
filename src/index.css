@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Gotham", "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Quincy CF", "Quincy", "Playfair Display", ui-serif, Georgia, serif;
+  
+  --color-brand-navy: #060d1f;
+  --color-brand-navy-light: #0f1c3f;
+  --color-brand-gold: #cfa861;
+  --color-brand-gold-hover: #b8924d;
+  --color-brand-text: #e2e8f0;
+}
+
+body {
+  background-color: var(--color-brand-navy);
+  color: var(--color-brand-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}

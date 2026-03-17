@@ -439,17 +439,18 @@ export default function App() {
             E se eu não puder estar ao vivo?
           </h2>
           
-          <div className="space-y-6 text-lg text-white/70 leading-relaxed font-light">
+          <div className="space-y-6 text-[16px] md:text-lg text-white leading-relaxed font-light text-left md:text-center">
             <p>
               Se você sente que esse conteúdo pode ser importante para o seu momento profissional, mas não tem certeza se conseguirá participar ao vivo nos dois dias, fique tranquila.
             </p>
             <p>
               Ao clicar no botão para garantir sua vaga, na próxima página você encontrará a opção de adicionar o <strong className="text-white font-medium">acesso às gravações completas da imersão.</strong>
             </p>
+            <hr className="border-white/20" />
             <p>
               Esse acesso estará disponível por um valor simbólico, justamente para garantir que ninguém deixe de participar da imersão por causa de agenda.
             </p>
-            <p className="italic text-white/90">
+            <p className="italic text-white">
               Então, mesmo que você não consiga estar presente ao vivo, ainda assim poderá aproveitar todo o conteúdo desses dois dias.
             </p>
           </div>
@@ -461,8 +462,8 @@ export default function App() {
           <h2 className="text-3xl md:text-[40px] font-serif text-white mb-6">
             Tem alguma dúvida?
           </h2>
-          <p className="text-white/70 mb-8">É só tocar no botão abaixo e falar com meu time:</p>
-          <button className="bg-gradient-to-r from-[#0B6D40] to-[#0AD778] hover:from-[#095a35] hover:to-[#08c06a] text-white font-bold text-[16px] px-10 py-5 rounded-lg transition-all duration-300 transform hover:scale-105 uppercase tracking-wider flex items-center gap-3 mx-auto">
+          <p className="text-white text-[16px] mb-8">É só tocar no botão abaixo<br className="md:hidden"/> e falar com meu time:</p>
+          <button className="bg-gradient-to-r from-[#0B6D40] to-[#0AD778] hover:from-[#095a35] hover:to-[#08c06a] text-white font-bold text-[14px] md:text-[16px] px-6 md:px-10 py-5 rounded-lg transition-all duration-300 transform hover:scale-105 uppercase tracking-wider flex items-center gap-3 mx-auto whitespace-nowrap">
             <img src="/assets/WHATSAPP BRANCO.svg" alt="" className="h-6 w-auto" />
             Falar com o Suporte no WhatsApp
           </button>
@@ -499,7 +500,7 @@ export default function App() {
       {/* Footer */}
       <footer className="border-t border-white/10 py-12 px-6 text-center text-sm text-white/40">
         <div className="max-w-[360px] md:max-w-[1140px] mx-auto">
-          <p>Copyright © 2026 Carol Rache – Todos os direitos reservados</p>
+          <p>Copyright © 2026 Carol Rache<br className="md:hidden"/> Todos os direitos reservados</p>
         </div>
       </footer>
     </div>
@@ -515,13 +516,13 @@ function FAQItem({ question, answer }: { question: string, answer: string }) {
         className="w-full text-left py-6 flex justify-between items-center focus:outline-none group"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <h3 className="text-[20px] font-bold text-white group-hover:text-brand-gold transition-colors pr-8" style={{fontFamily: 'var(--font-sans)'}}>{question}</h3>
+        <h3 className="text-[16px] md:text-[20px] font-bold text-white group-hover:text-brand-gold transition-colors pr-8" style={{fontFamily: 'var(--font-sans)'}}>{question}</h3>
         <ChevronDown className={`w-5 h-5 text-white/50 transition-transform duration-300 shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       <div 
         className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-0'}`}
       >
-        <p className="text-white/60 font-light leading-relaxed">{answer}</p>
+        <p className="text-white text-[16px] font-light leading-relaxed">{answer}</p>
       </div>
     </div>
   );

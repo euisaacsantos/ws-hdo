@@ -57,13 +57,8 @@ export default function App() {
         </div>
       </div>
 
-      {/* Background Effects */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[120px] -translate-y-1/2"></div>
-        <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-brand-gold/5 rounded-full blur-[100px] translate-y-1/3"></div>
-      </div>
 
-      <main className="relative z-10">
+      <main className="relative z-10 [&>section+section]:mt-0">
         
         {/* 1ª DOBRA - Hero */}
         <section className="pt-20 pb-24 px-6 bg-white md:bg-[url('/assets/BG1%20DESKTOP.png')] md:bg-cover md:bg-[center_top_-80px] md:bg-no-repeat">
@@ -354,7 +349,7 @@ export default function App() {
         </section>
 
         {/* 5ª DOBRA - Target Audience */}
-        <section className="py-16 px-6 bg-white">
+        <section className="pt-16 pb-16 px-6 bg-white">
           <div className="max-w-[1140px] mx-auto">
           <h2 className="text-3xl md:text-[40px] font-serif text-center text-[#081E3B] mb-10">
             Para quem é o <span className="italic text-brand-gold">Workshop A Habilidade de Ouro?</span>
@@ -392,12 +387,12 @@ export default function App() {
         </section>
 
         {/* 6ª DOBRA - Offer */}
-        <section className="py-24 px-6 bg-[url('/assets/BG%20OFERTA%20DESKTOP.png')] bg-cover bg-center bg-no-repeat">
+        <section className="py-24 px-6 bg-brand-navy bg-[url('/assets/BG%20OFERTA%20DESKTOP.png')] bg-cover bg-[center_bottom_-50px] bg-no-repeat">
           <div className="max-w-[1140px] mx-auto">
           <div className="max-w-[520px] ml-16 bg-brand-navy-light border border-brand-gold/30 rounded-3xl px-5 py-8 text-center shadow-[0_0_50px_rgba(207,168,97,0.1)] relative overflow-hidden">
             
             {/* Decorative elements */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent"></div>
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-gold to-transparent"></div>
             
             <h2 className="text-3xl md:text-[32px] font-serif text-white mb-6">
               Ao garantir sua vaga agora,<br/> você vai receber:
@@ -437,7 +432,8 @@ export default function App() {
         </section>
 
         {/* 7ª DOBRA - Recordings Objection */}
-        <section className="py-16 px-6 max-w-[1140px] mx-auto text-center">
+        <section className="pt-8 pb-16 px-6 bg-gradient-to-b from-brand-navy-light to-brand-navy">
+          <div className="max-w-[1140px] mx-auto text-center">
           <h2 className="text-3xl md:text-[40px] font-serif text-white mb-8">
             “E se eu não puder estar ao vivo?”
           </h2>
@@ -455,6 +451,7 @@ export default function App() {
             <p className="italic text-white/90">
               Então, mesmo que você não consiga estar presente ao vivo, ainda assim poderá aproveitar todo o conteúdo desses dois dias.
             </p>
+          </div>
           </div>
         </section>
 
@@ -500,12 +497,8 @@ export default function App() {
 
       {/* Footer */}
       <footer className="border-t border-white/10 py-12 px-6 text-center text-sm text-white/40">
-        <div className="max-w-[1140px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>Copyright © 2026 Namah – Todos os direitos reservados</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
-            <a href="#" className="hover:text-white transition-colors">Termos de uso</a>
-          </div>
+        <div className="max-w-[1140px] mx-auto">
+          <p>Copyright © 2026 Carol Rache – Todos os direitos reservados</p>
         </div>
       </footer>
     </div>
@@ -521,7 +514,7 @@ function FAQItem({ question, answer }: { question: string, answer: string }) {
         className="w-full text-left py-6 flex justify-between items-center focus:outline-none group"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <h3 className="text-lg font-medium text-white/90 group-hover:text-brand-gold transition-colors pr-8">{question}</h3>
+        <h3 className="text-[20px] font-bold text-white group-hover:text-brand-gold transition-colors pr-8" style={{fontFamily: 'var(--font-sans)'}}>{question}</h3>
         <ChevronDown className={`w-5 h-5 text-white/50 transition-transform duration-300 shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       <div 

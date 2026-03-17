@@ -1,0 +1,26 @@
+{
+  "name": "ws-hdo",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gus-cardoz/ws-hdo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gus-cardoz/ws-hdo/issues"
+  },
+  "homepage": "https://github.com/gus-cardoz/ws-hdo#readme",
+  "dependencies": {
+    "vite": "^8.0.0"
+  }
+}

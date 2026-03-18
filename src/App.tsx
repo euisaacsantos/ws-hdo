@@ -248,7 +248,7 @@ export default function App() {
 
             <div className="grid md:grid-cols-2 gap-12">
               {/* Saturday */}
-              <div className="bg-brand-navy-light/50 p-8 md:p-12 rounded-2xl border border-white/10 relative overflow-hidden group hover:border-brand-gold/30 transition-colors">
+              <div className="bg-white/10 p-8 md:p-12 rounded-2xl border border-white/10 relative overflow-hidden group hover:border-brand-gold/30 transition-colors">
                 <div className="absolute top-0 left-0 w-1 h-full bg-brand-gold transform origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500"></div>
                 
                 <h3 className="text-[30px] md:text-[36px] font-serif text-brand-gold mb-2">Sábado, 28 de março</h3>
@@ -291,7 +291,7 @@ export default function App() {
               </div>
 
               {/* Sunday */}
-              <div className="bg-brand-navy-light/50 p-8 md:p-12 rounded-2xl border border-white/10 relative overflow-hidden group hover:border-brand-gold/30 transition-colors">
+              <div className="bg-white/10 p-8 md:p-12 rounded-2xl border border-white/10 relative overflow-hidden group hover:border-brand-gold/30 transition-colors">
                 <div className="absolute top-0 left-0 w-1 h-full bg-brand-gold transform origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500"></div>
                 
                 <h3 className="text-[30px] md:text-[36px] font-serif text-brand-gold mb-2">Domingo, 29 de março</h3>

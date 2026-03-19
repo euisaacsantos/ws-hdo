@@ -133,7 +133,7 @@ export default function App() {
           <img src="/assets/LOGO HDO AZUL.svg" alt="Workshop A Habilidade de Ouro" className="mb-12 h-16 w-auto hidden md:block" />
 
           <h1 className="text-[26px] md:text-[40px] font-serif text-[#081E3B] leading-[1.0] mb-5 max-w-4xl">
-            O problema da sua vida profissional<span className="hidden md:inline"><br/></span> já não é mais <span className="italic text-brand-gold">falta de competência.</span><span className="hidden md:inline"><br/></span> <span className="font-medium">É nunca<br className="md:hidden" /> ter aprendido a moldar<span className="hidden md:inline"><br/></span> o comportamento humano.</span>
+            O problema da sua vida profissional<span className="hidden md:inline"><br/></span> já não é mais falta de competência.<span className="hidden md:inline"><br/></span> <span className="font-medium">É nunca<br className="md:hidden" /> ter aprendido a moldar<span className="hidden md:inline"><br/></span> o comportamento humano.</span>
           </h1>
 
           <p className="text-[16px] md:text-[20px] text-[#081E3B]/70 max-w-3xl mb-4 leading-[1.3] font-normal">
@@ -152,7 +152,7 @@ export default function App() {
             </div>
           </div>
 
-          <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[14px] md:text-[16px] px-8 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-wider">
+          <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[14px] md:text-[16px] px-8 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-normal md:tracking-wider">
             QUERO DOMINAR A HABILIDADE DE OURO!
           </a>
           </div>
@@ -298,7 +298,7 @@ export default function App() {
             </p>
           </div>
           <div className="flex justify-center mt-10">
-          <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[14px] md:text-[16px] px-8 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-wider">
+          <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[14px] md:text-[16px] px-8 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-normal md:tracking-wider">
             É DISSO QUE EU PRECISO!
           </a>
           </div>
@@ -408,7 +408,7 @@ export default function App() {
               </div>
             </div>
             <div className="text-center mt-12">
-              <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[14px] md:text-[16px] px-8 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-wider">
+              <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[14px] md:text-[16px] px-8 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-normal md:tracking-wider">
                 QUERO PARTICIPAR DO WORKSHOP!
               </a>
             </div>
@@ -530,8 +530,8 @@ export default function App() {
               Tem alguma dúvida?
             </h2>
             <p className="text-white text-[14px] md:text-[16px] mb-8">É só tocar no botão abaixo<br className="md:hidden" /> e falar com meu time:</p>
-            <button onClick={() => sendCAPI('Contact', { content_name: 'Suporte WhatsApp' })} className="bg-gradient-to-r from-[#0B6D40] to-[#0AD778] hover:from-[#095a35] hover:to-[#08c06a] text-white font-bold text-[13px] md:text-[16px] px-5 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 uppercase tracking-wider inline-flex items-center gap-2 md:gap-3">
-              <img src="/assets/WHATSAPP BRANCO.svg" alt="" className="h-5 md:h-6 w-auto" />
+            <button onClick={() => sendCAPI('Contact', { content_name: 'Suporte WhatsApp' })} className="bg-gradient-to-r from-[#0B6D40] to-[#0AD778] hover:from-[#095a35] hover:to-[#08c06a] text-white font-bold text-[13px] md:text-[16px] px-5 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 uppercase tracking-normal md:tracking-wider inline-flex items-center gap-1.5 md:gap-3">
+              <img src="/assets/WHATSAPP BRANCO.svg" alt="" className="h-5 md:h-6 w-auto shrink-0" />
               Falar com o Suporte no WhatsApp
             </button>
           </div>

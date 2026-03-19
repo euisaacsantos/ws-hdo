@@ -127,7 +127,7 @@ export default function App() {
       <main className="relative z-10 [&>section+section]:mt-0">
         
         {/* 1ª DOBRA - Hero */}
-        <section className="pt-[245px] md:pt-20 pb-12 md:pb-24 px-6 bg-[url('/assets/BG1%20MOBILE.png?v=3')] bg-cover bg-[center_top_-30px] bg-no-repeat md:bg-[url('/assets/BG1%20DESKTOP.png')] md:bg-cover md:bg-[center_top_-80px] md:bg-no-repeat relative">
+        <section className="pt-[245px] md:pt-20 pb-12 md:pb-24 px-6 bg-[url('/assets/BG1%20MOBILE.webp')] bg-cover bg-[center_top_-30px] bg-no-repeat md:bg-[url('/assets/BG1%20DESKTOP.webp')] md:bg-cover md:bg-[center_top_-80px] md:bg-no-repeat relative">
           <img src="/assets/LOGO HDO AZUL.svg" alt="Workshop A Habilidade de Ouro" className="absolute top-[45px] left-4 h-11 w-auto md:hidden" />
           <div className="max-w-[360px] md:max-w-[1140px] mx-auto text-center md:text-left flex flex-col items-center md:items-start">
           <img src="/assets/LOGO HDO AZUL.svg" alt="Workshop A Habilidade de Ouro" className="mb-12 h-16 w-auto hidden md:block" />
@@ -159,7 +159,7 @@ export default function App() {
         </section>
 
         {/* 2ª DOBRA - Mentors */}
-        <section className="py-10 md:py-16 px-6 bg-[url('/assets/BG%20BASE%20DESKTOP.png')] bg-cover bg-center bg-no-repeat border-y border-white/5">
+        <section className="py-10 md:py-16 px-6 bg-[url('/assets/BG%20BASE%20DESKTOP.webp')] bg-cover bg-center bg-no-repeat border-y border-white/5">
           <div className="max-w-[360px] md:max-w-[1140px] mx-auto">
             <h2 className="text-3xl md:text-[40px] font-serif text-center text-white mb-10">
               Conheça os seus mentores<br className="md:hidden"/> no <span className="italic text-brand-gold">Workshop:<br/> A Habilidade de Ouro</span>
@@ -195,7 +195,7 @@ export default function App() {
                 </div>
                 <div className="w-full md:w-[40%]">
                   <img
-                    src="/assets/FOTO CAROL.png"
+                    src="/assets/FOTO CAROL.webp"
                     alt="Carol Rache"
                     className="rounded-lg shadow-2xl w-full object-cover md:h-[600px]"
                   />
@@ -205,7 +205,7 @@ export default function App() {
               {/* Other Mentors */}
               <div className="space-y-3 md:space-y-6">
                  <img
-                    src="/assets/FOTO PATRUS.png"
+                    src="/assets/FOTO PATRUS.webp"
                     alt="Roberto Patrus"
                     className="rounded-lg shadow-xl w-full object-cover aspect-square md:aspect-[3/4]"
                   />
@@ -220,7 +220,7 @@ export default function App() {
 
               <div className="space-y-3 md:space-y-6">
                  <img
-                    src="/assets/FOTO PATY.png"
+                    src="/assets/FOTO PATY.webp"
                     alt="Paty Perdigão"
                     className="rounded-lg shadow-xl w-full object-cover aspect-square md:aspect-[3/4]"
                   />
@@ -235,7 +235,7 @@ export default function App() {
 
               <div className="space-y-3 md:space-y-6">
                  <img
-                    src="/assets/FOTO DUDA.png"
+                    src="/assets/FOTO DUDA.webp"
                     alt="Eduarda Maia"
                     className="rounded-lg shadow-xl w-full object-cover aspect-square md:aspect-[3/4]"
                   />
@@ -306,7 +306,7 @@ export default function App() {
         </section>
 
         {/* 4ª DOBRA - Schedule */}
-        <section className="py-10 md:py-16 px-6 bg-[url('/assets/BG%20BASE%20DESKTOP.png')] bg-cover bg-center bg-no-repeat" style={{transform: 'scaleX(-1)'}}>
+        <section className="py-10 md:py-16 px-6 bg-[url('/assets/BG%20BASE%20DESKTOP.webp')] bg-cover bg-center bg-no-repeat" style={{transform: 'scaleX(-1)'}}>
           <div className="max-w-[360px] md:max-w-[1140px] mx-auto" style={{transform: 'scaleX(-1)'}}>
             <h2 className="text-3xl md:text-[40px] font-serif text-center text-white mb-10">
               Cronograma oficial
@@ -454,7 +454,7 @@ export default function App() {
         </section>
 
         {/* 6ª DOBRA - Offer */}
-        <section className="pt-[280px] pb-10 md:py-24 px-6 bg-brand-navy bg-[url('/assets/BG%20OFERTA%20MOBILE.png')] md:bg-[url('/assets/BG%20OFERTA%20DESKTOP.png')] bg-cover bg-top md:bg-[center_bottom_-50px] bg-no-repeat">
+        <section className="pt-[280px] pb-10 md:py-24 px-6 bg-brand-navy bg-[url('/assets/BG%20OFERTA%20MOBILE.webp')] md:bg-[url('/assets/BG%20OFERTA%20DESKTOP.webp')] bg-cover bg-top md:bg-[center_bottom_-50px] bg-no-repeat">
           <div className="max-w-[360px] md:max-w-[1140px] mx-auto flex justify-center md:justify-start">
           <div className="max-w-[520px] md:ml-16 bg-brand-navy-light border border-brand-gold/30 rounded-3xl px-5 py-8 text-center shadow-[0_0_50px_rgba(207,168,97,0.1)] relative overflow-hidden">
             

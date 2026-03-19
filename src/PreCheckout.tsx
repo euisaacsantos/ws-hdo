@@ -134,11 +134,11 @@ export default function PreCheckout() {
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/assets/BG1 MOBILE.png')" }}
+        style={{ backgroundImage: "url('/assets/BG1 MOBILE.webp')" }}
       />
       <div
         className="absolute inset-0 hidden md:block bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/assets/BG1 DESKTOP.png')" }}
+        style={{ backgroundImage: "url('/assets/BG1 DESKTOP.webp')" }}
       />
       <div className="absolute inset-0 bg-black/70 backdrop-blur-md" />
 

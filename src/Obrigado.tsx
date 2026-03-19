@@ -125,10 +125,7 @@ export default function Obrigado() {
             <CheckCircle2 className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-[28px] md:text-[40px] font-serif leading-tight mb-4">
-            Parabéns! Você garantiu seu acesso ao{' '}
-            <span className="italic bg-gradient-to-r from-[#966E16] to-[#D6B865] bg-clip-text text-transparent">
-              Workshop: A Habilidade de Ouro
-            </span>
+            Sua inscrição para o Workshop está quase finalizada
           </h1>
           <p className="text-[16px] md:text-xl text-white/70">
             Falta poucos passos para você finalizar sua inscrição.

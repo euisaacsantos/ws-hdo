@@ -31,6 +31,7 @@ export default async function handler(req, res) {
   }
 
   const { error } = await supabase.from('asl0226_credenciamento').insert({
+    evento: 'AHDO-0326',
     email,
     phone: phone || null,
     utm_source: utm_source || null,

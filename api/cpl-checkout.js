@@ -33,6 +33,7 @@ export default async function handler(req, res) {
   }
 
   const { error } = await supabase.from('asl0226_checkout').insert({
+    evento: 'AHDO-0326',
     email,
     phone: phone || null,
     name: name || null,

@@ -30,7 +30,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Email is required' });
   }
 
-  const { error } = await supabase.from('credenciamento').insert({
+  const { error } = await supabase.from('asl0226_credenciamento').insert({
     email,
     phone: phone || null,
     utm_source: utm_source || null,

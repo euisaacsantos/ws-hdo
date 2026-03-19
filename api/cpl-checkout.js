@@ -32,7 +32,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Email is required' });
   }
 
-  const { error } = await supabase.from('cpl_checkout').insert({
+  const { error } = await supabase.from('asl0226_checkout').insert({
     email,
     phone: phone || null,
     name: name || null,

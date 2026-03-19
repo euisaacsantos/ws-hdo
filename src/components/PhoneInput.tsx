@@ -104,7 +104,7 @@ export default function PhoneInput({ value, onChange, className }: PhoneInputPro
     onChange(c.dial + localDigits);
   }
 
-  const displayValue = country.code === 'BR' ? formatBrazilPhone(localDigits) : localDigits;
+  const displayValue = localDigits ? (country.code === 'BR' ? formatBrazilPhone(localDigits) : localDigits) : '';
 
   const filtered = COUNTRIES.filter(
     (c) =>

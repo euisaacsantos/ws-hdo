@@ -122,10 +122,10 @@ export default function Obrigado() {
         {/* Confirmation */}
         <div className="text-center mb-10 md:mb-14">
           <h1 className="text-[28px] md:text-[40px] font-serif leading-tight mb-4">
-            Sua inscrição para o Workshop<br /> está quase finalizada
+            Sua inscrição para o Workshop<br /> está quase finalizada.
           </h1>
           <p className="text-[16px] md:text-xl text-white/70">
-            Falta poucos passos para você finalizar sua inscrição.
+            Faltam poucos passos para você finalizar sua inscrição.
           </p>
         </div>
 

@@ -6,6 +6,51 @@
 import { CheckCircle2, ChevronDown, Clock, Calendar, MonitorPlay } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
+const CHECKOUT_URL = 'https://pay.hotmart.com/SEU-CHECKOUT-AQUI';
+
+declare global {
+  interface Window { fbq: (...args: unknown[]) => void; }
+}
+
+function getCookie(name: string): string {
+  const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  return match ? match[2] : '';
+}
+
+function buildFbc(): string {
+  const params = new URLSearchParams(window.location.search);
+  const fbclid = params.get('fbclid');
+  return fbclid ? 'fb.1.' + Date.now() + '.' + fbclid : '';
+}
+
+function sendCAPI(eventName: string, customData?: Record<string, unknown>) {
+  const eventId = 'eid_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+  const fbp = getCookie('_fbp');
+  const fbc = getCookie('_fbc') || buildFbc();
+
+  // Client-side Pixel (com event_id para dedup)
+  if (window.fbq) {
+    window.fbq('track', eventName, customData || {}, { eventID: eventId });
+  }
+
+  // Server-side CAPI
+  fetch('/api/meta-capi', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      event_name: eventName,
+      event_id: eventId,
+      event_source_url: window.location.href,
+      user_data_client: {
+        ...(fbp && { fbp }),
+        ...(fbc && { fbc }),
+      },
+      ...(customData && { custom_data: customData }),
+    }),
+    keepalive: true,
+  }).catch(() => {});
+}
+
 export default function App() {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -13,6 +58,27 @@ export default function App() {
     minutes: 0,
     seconds: 0,
   });
+
+  // PageView CAPI (disparo server-side, o client já dispara no HTML)
+  useEffect(() => {
+    sendCAPI('PageView');
+  }, []);
+
+  // URL params → sck no checkout Hotmart
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const parts: string[] = [];
+    params.forEach((val, key) => {
+      if (val) parts.push(key + ':' + val.replace(/[|:]/g, '-'));
+    });
+    if (parts.length) {
+      const sck = encodeURIComponent(parts.join('|'));
+      document.querySelectorAll<HTMLAnchorElement>('a[href*="pay.hotmart.com"]').forEach((link) => {
+        const href = link.getAttribute('href')!;
+        link.setAttribute('href', href + (href.indexOf('?') > -1 ? '&' : '?') + 'sck=' + sck);
+      });
+    }
+  }, []);
 
   // Simple countdown logic for demonstration
   useEffect(() => {
@@ -86,9 +152,9 @@ export default function App() {
             </div>
           </div>
 
-          <button className="bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[16px] px-10 py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-wider">
+          <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[16px] px-10 py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-wider">
             QUERO DOMINAR A HABILIDADE DE OURO!
-          </button>
+          </a>
           </div>
         </section>
 
@@ -232,9 +298,9 @@ export default function App() {
             </p>
           </div>
           <div className="flex justify-center mt-10">
-          <button className="bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[16px] px-10 py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-wider">
+          <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[16px] px-10 py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-wider">
             É DISSO QUE EU PRECISO!
-          </button>
+          </a>
           </div>
           </div>
         </section>
@@ -342,9 +408,9 @@ export default function App() {
               </div>
             </div>
             <div className="text-center mt-12">
-              <button className="bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[16px] px-10 py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-wider">
+              <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[16px] px-10 py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-wider">
                 QUERO PARTICIPAR DO WORKSHOP!
-              </button>
+              </a>
             </div>
           </div>
         </section>
@@ -425,9 +491,9 @@ export default function App() {
               </div>
             </div>
 
-            <button className="w-full md:w-auto bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[14px] md:text-[16px] px-6 md:px-12 py-4 md:py-6 rounded-lg whitespace-nowrap transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-wider">
+            <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block w-full md:w-auto bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[14px] md:text-[16px] px-6 md:px-12 py-4 md:py-6 rounded-lg whitespace-nowrap transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-wider text-center">
               Garantir minha vaga agora
-            </button>
+            </a>
           </div>
           </div>
         </section>
@@ -463,7 +529,7 @@ export default function App() {
             Tem alguma dúvida?
           </h2>
           <p className="text-white text-[16px] mb-8">É só tocar no botão abaixo<br className="md:hidden"/> e falar com meu time:</p>
-          <button className="bg-gradient-to-r from-[#0B6D40] to-[#0AD778] hover:from-[#095a35] hover:to-[#08c06a] text-white font-bold text-[14px] md:text-[16px] px-6 md:px-10 py-5 rounded-lg transition-all duration-300 transform hover:scale-105 uppercase tracking-wider flex items-center gap-3 mx-auto whitespace-nowrap">
+          <button onClick={() => sendCAPI('Contact', { content_name: 'Suporte WhatsApp' })} className="bg-gradient-to-r from-[#0B6D40] to-[#0AD778] hover:from-[#095a35] hover:to-[#08c06a] text-white font-bold text-[14px] md:text-[16px] px-6 md:px-10 py-5 rounded-lg transition-all duration-300 transform hover:scale-105 uppercase tracking-wider flex items-center gap-3 mx-auto whitespace-nowrap">
             <img src="/assets/WHATSAPP BRANCO.svg" alt="" className="h-6 w-auto" />
             Falar com o Suporte no WhatsApp
           </button>

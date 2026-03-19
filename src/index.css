@@ -20,6 +20,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.bg-gradient-gold {
+  background: linear-gradient(135deg, #C09C64 0%, #8B6B3D 100%);
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2s ease-in-out infinite;
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 10px 25px -3px rgba(192, 156, 100, 0.25); }
+  50% { box-shadow: 0 10px 40px -3px rgba(192, 156, 100, 0.5); }
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
 }

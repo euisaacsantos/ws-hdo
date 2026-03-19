@@ -121,13 +121,8 @@ export default function Obrigado() {
       <main className="max-w-[360px] md:max-w-[800px] mx-auto px-4 py-10 md:py-16">
         {/* Confirmation */}
         <div className="text-center mb-10 md:mb-14">
-          {!submitted && (
-            <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#966E16] to-[#D6B865] flex items-center justify-center mx-auto mb-6">
-              <LoaderCircle className="w-8 h-8 text-white" />
-            </div>
-          )}
           <h1 className="text-[28px] md:text-[40px] font-serif leading-tight mb-4">
-            Sua inscrição para o Workshop está quase finalizada
+            Sua inscrição para o Workshop<br /> está quase finalizada
           </h1>
           <p className="text-[16px] md:text-xl text-white/70">
             Falta poucos passos para você finalizar sua inscrição.

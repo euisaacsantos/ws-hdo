@@ -127,12 +127,12 @@ export default function App() {
       <main className="relative z-10 [&>section+section]:mt-0">
         
         {/* 1ª DOBRA - Hero */}
-        <section className="pt-[245px] md:pt-20 pb-12 md:pb-24 px-6 bg-[url('/assets/BG1%20MOBILE.webp')] bg-cover bg-[center_top_-30px] bg-no-repeat md:bg-[url('/assets/BG1%20DESKTOP.webp')] md:bg-cover md:bg-[center_top_-80px] md:bg-no-repeat relative">
+        <section className="pt-[210px] md:pt-20 pb-12 md:pb-24 px-6 bg-[url('/assets/BG1%20MOBILE.webp')] bg-cover bg-[center_top_-30px] bg-no-repeat md:bg-[url('/assets/BG1%20DESKTOP.webp')] md:bg-cover md:bg-[center_top_-80px] md:bg-no-repeat relative">
           <img src="/assets/LOGO HDO AZUL.svg" alt="Workshop A Habilidade de Ouro" className="absolute top-[45px] left-4 h-11 w-auto md:hidden" />
           <div className="max-w-[360px] md:max-w-[1140px] mx-auto text-center md:text-left flex flex-col items-center md:items-start">
           <img src="/assets/LOGO HDO AZUL.svg" alt="Workshop A Habilidade de Ouro" className="mb-12 h-16 w-auto hidden md:block" />
 
-          <h1 className="text-[28px] md:text-[40px] font-serif text-[#081E3B] leading-[1.0] mb-5 max-w-4xl">
+          <h1 className="text-[26px] md:text-[40px] font-serif text-[#081E3B] leading-[1.0] mb-5 max-w-4xl">
             O problema da sua vida profissional<span className="hidden md:inline"><br/></span> já não é mais <span className="italic text-brand-gold">falta de competência.</span><span className="hidden md:inline"><br/></span> <span className="font-medium">É nunca<br className="md:hidden" /> ter aprendido a moldar<span className="hidden md:inline"><br/></span> o comportamento humano.</span>
           </h1>
 
@@ -140,14 +140,14 @@ export default function App() {
             Participe de um <strong className="font-bold text-[#081E3B]">treinamento de 2 dias</strong> para desenvolver<br className="hidden md:inline" /> a habilidade que a faculdade nunca te ensinou, mas<br className="hidden md:inline" /> é a que determina o quanto sua técnica realmente<br className="hidden md:inline" /> gera resultado: <strong className="font-bold text-[#081E3B]">a habilidade de guiar pessoas.</strong>
           </p>
 
-          <div className="flex flex-nowrap justify-center md:justify-start items-center gap-3 mb-6 text-xs md:text-base text-[#081E3B]/80 font-medium tracking-wide border border-[#CED2D8] rounded-md px-4 py-2">
-            <div className="flex items-center gap-2">
-              <img src="/assets/CALENDARIO GOLD.svg" alt="" className="h-5 w-auto" />
+          <div className="flex flex-nowrap justify-center md:justify-start items-center gap-2 md:gap-3 mb-6 text-[11px] md:text-base text-[#081E3B]/80 font-medium tracking-wide border border-[#CED2D8] rounded-md px-2 md:px-4 py-2 whitespace-nowrap">
+            <div className="flex items-center gap-1 md:gap-2">
+              <img src="/assets/CALENDARIO GOLD.svg" alt="" className="h-4 md:h-5 w-auto shrink-0" />
               28 e 29 de março, às 09h
             </div>
             <span className="text-[#081E3B]/40">|</span>
-            <div className="flex items-center gap-2">
-              <img src="/assets/PLAY GOLD.svg" alt="" className="h-5 w-auto" />
+            <div className="flex items-center gap-1 md:gap-2">
+              <img src="/assets/PLAY GOLD.svg" alt="" className="h-4 md:h-5 w-auto shrink-0" />
               100% ao vivo
             </div>
           </div>

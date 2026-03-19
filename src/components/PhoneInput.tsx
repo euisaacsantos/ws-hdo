@@ -4,36 +4,46 @@ interface Country {
   name: string;
   code: string;
   dial: string;
-  flag: string;
   minDigits: number;
 }
 
+function FlagImg({ code, className }: { code: string; className?: string }) {
+  return (
+    <img
+      src={`https://flagcdn.com/w40/${code.toLowerCase()}.png`}
+      srcSet={`https://flagcdn.com/w80/${code.toLowerCase()}.png 2x`}
+      alt={code}
+      className={className || 'w-5 h-auto rounded-sm'}
+    />
+  );
+}
+
 const COUNTRIES: Country[] = [
-  { name: 'Brasil', code: 'BR', dial: '+55', flag: '\u{1F1E7}\u{1F1F7}', minDigits: 10 },
-  { name: 'Portugal', code: 'PT', dial: '+351', flag: '\u{1F1F5}\u{1F1F9}', minDigits: 9 },
-  { name: 'Estados Unidos', code: 'US', dial: '+1', flag: '\u{1F1FA}\u{1F1F8}', minDigits: 10 },
-  { name: 'Argentina', code: 'AR', dial: '+54', flag: '\u{1F1E6}\u{1F1F7}', minDigits: 10 },
-  { name: 'Chile', code: 'CL', dial: '+56', flag: '\u{1F1E8}\u{1F1F1}', minDigits: 9 },
-  { name: 'Colombia', code: 'CO', dial: '+57', flag: '\u{1F1E8}\u{1F1F4}', minDigits: 10 },
-  { name: 'Mexico', code: 'MX', dial: '+52', flag: '\u{1F1F2}\u{1F1FD}', minDigits: 10 },
-  { name: 'Espanha', code: 'ES', dial: '+34', flag: '\u{1F1EA}\u{1F1F8}', minDigits: 9 },
-  { name: 'Italia', code: 'IT', dial: '+39', flag: '\u{1F1EE}\u{1F1F9}', minDigits: 9 },
-  { name: 'Franca', code: 'FR', dial: '+33', flag: '\u{1F1EB}\u{1F1F7}', minDigits: 9 },
-  { name: 'Alemanha', code: 'DE', dial: '+49', flag: '\u{1F1E9}\u{1F1EA}', minDigits: 10 },
-  { name: 'Reino Unido', code: 'GB', dial: '+44', flag: '\u{1F1EC}\u{1F1E7}', minDigits: 10 },
-  { name: 'Japao', code: 'JP', dial: '+81', flag: '\u{1F1EF}\u{1F1F5}', minDigits: 10 },
-  { name: 'Angola', code: 'AO', dial: '+244', flag: '\u{1F1E6}\u{1F1F4}', minDigits: 9 },
-  { name: 'Mocambique', code: 'MZ', dial: '+258', flag: '\u{1F1F2}\u{1F1FF}', minDigits: 9 },
-  { name: 'Cabo Verde', code: 'CV', dial: '+238', flag: '\u{1F1E8}\u{1F1FB}', minDigits: 7 },
-  { name: 'Peru', code: 'PE', dial: '+51', flag: '\u{1F1F5}\u{1F1EA}', minDigits: 9 },
-  { name: 'Uruguai', code: 'UY', dial: '+598', flag: '\u{1F1FA}\u{1F1FE}', minDigits: 8 },
-  { name: 'Paraguai', code: 'PY', dial: '+595', flag: '\u{1F1F5}\u{1F1FE}', minDigits: 9 },
-  { name: 'Bolivia', code: 'BO', dial: '+591', flag: '\u{1F1E7}\u{1F1F4}', minDigits: 8 },
-  { name: 'Equador', code: 'EC', dial: '+593', flag: '\u{1F1EA}\u{1F1E8}', minDigits: 9 },
-  { name: 'Venezuela', code: 'VE', dial: '+58', flag: '\u{1F1FB}\u{1F1EA}', minDigits: 10 },
-  { name: 'Canada', code: 'CA', dial: '+1', flag: '\u{1F1E8}\u{1F1E6}', minDigits: 10 },
-  { name: 'Australia', code: 'AU', dial: '+61', flag: '\u{1F1E6}\u{1F1FA}', minDigits: 9 },
-  { name: 'India', code: 'IN', dial: '+91', flag: '\u{1F1EE}\u{1F1F3}', minDigits: 10 },
+  { name: 'Brasil', code: 'BR', dial: '+55', minDigits: 10 },
+  { name: 'Portugal', code: 'PT', dial: '+351', minDigits: 9 },
+  { name: 'Estados Unidos', code: 'US', dial: '+1', minDigits: 10 },
+  { name: 'Argentina', code: 'AR', dial: '+54', minDigits: 10 },
+  { name: 'Chile', code: 'CL', dial: '+56', minDigits: 9 },
+  { name: 'Colombia', code: 'CO', dial: '+57', minDigits: 10 },
+  { name: 'Mexico', code: 'MX', dial: '+52', minDigits: 10 },
+  { name: 'Espanha', code: 'ES', dial: '+34', minDigits: 9 },
+  { name: 'Italia', code: 'IT', dial: '+39', minDigits: 9 },
+  { name: 'Franca', code: 'FR', dial: '+33', minDigits: 9 },
+  { name: 'Alemanha', code: 'DE', dial: '+49', minDigits: 10 },
+  { name: 'Reino Unido', code: 'GB', dial: '+44', minDigits: 10 },
+  { name: 'Japao', code: 'JP', dial: '+81', minDigits: 10 },
+  { name: 'Angola', code: 'AO', dial: '+244', minDigits: 9 },
+  { name: 'Mocambique', code: 'MZ', dial: '+258', minDigits: 9 },
+  { name: 'Cabo Verde', code: 'CV', dial: '+238', minDigits: 7 },
+  { name: 'Peru', code: 'PE', dial: '+51', minDigits: 9 },
+  { name: 'Uruguai', code: 'UY', dial: '+598', minDigits: 8 },
+  { name: 'Paraguai', code: 'PY', dial: '+595', minDigits: 9 },
+  { name: 'Bolivia', code: 'BO', dial: '+591', minDigits: 8 },
+  { name: 'Equador', code: 'EC', dial: '+593', minDigits: 9 },
+  { name: 'Venezuela', code: 'VE', dial: '+58', minDigits: 10 },
+  { name: 'Canada', code: 'CA', dial: '+1', minDigits: 10 },
+  { name: 'Australia', code: 'AU', dial: '+61', minDigits: 9 },
+  { name: 'India', code: 'IN', dial: '+91', minDigits: 10 },
 ];
 
 function formatBrazilPhone(digits: string): string {
@@ -119,7 +129,7 @@ export default function PhoneInput({ value, onChange, className }: PhoneInputPro
         onClick={() => setOpen(!open)}
         className="flex items-center gap-1.5 px-3 py-3 bg-gray-50 border border-r-0 border-gray-400 rounded-l-xl text-sm shrink-0"
       >
-        <span className="text-lg">{country.flag}</span>
+        <FlagImg code={country.code} />
         <span className="text-gray-600 text-xs">{country.dial}</span>
         <svg className="w-3 h-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
       </button>
@@ -144,7 +154,7 @@ export default function PhoneInput({ value, onChange, className }: PhoneInputPro
                 onClick={() => selectCountry(c)}
                 className={`w-full flex items-center gap-2 px-3 py-2 text-sm text-left hover:bg-gray-50 ${c.code === country.code ? 'bg-gray-100 font-medium' : ''}`}
               >
-                <span className="text-lg">{c.flag}</span>
+                <FlagImg code={c.code} />
                 <span className="text-gray-800">{c.name}</span>
                 <span className="text-gray-400 ml-auto">{c.dial}</span>
               </button>

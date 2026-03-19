@@ -32,6 +32,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Quincy CF";
+  src: url("/fonts/Quincy Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --font-sans: "Gotham", "Montserrat", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Quincy CF", "Quincy", "Playfair Display", ui-serif, Georgia, serif;

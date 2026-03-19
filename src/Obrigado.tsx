@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { CheckCircle2, Loader2 } from 'lucide-react';
+import { CheckCircle2, LoaderCircle } from 'lucide-react';
 
 const QUESTIONS = [
   {
@@ -123,7 +123,7 @@ export default function Obrigado() {
         <div className="text-center mb-10 md:mb-14">
           {!submitted && (
             <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#966E16] to-[#D6B865] flex items-center justify-center mx-auto mb-6">
-              <Loader2 className="w-8 h-8 text-white" />
+              <LoaderCircle className="w-8 h-8 text-white" />
             </div>
           )}
           <h1 className="text-[28px] md:text-[40px] font-serif leading-tight mb-4">

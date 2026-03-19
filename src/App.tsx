@@ -132,11 +132,11 @@ export default function App() {
           <div className="max-w-[360px] md:max-w-[1140px] mx-auto text-center md:text-left flex flex-col items-center md:items-start">
           <img src="/assets/LOGO HDO AZUL.svg" alt="Workshop A Habilidade de Ouro" className="mb-12 h-16 w-auto hidden md:block" />
 
-          <h1 className="text-[30px] md:text-[40px] font-serif text-[#081E3B] leading-[1.0] mb-5 max-w-4xl">
+          <h1 className="text-[28px] md:text-[40px] font-serif text-[#081E3B] leading-[1.0] mb-5 max-w-4xl">
             O problema da sua vida profissional<span className="hidden md:inline"><br/></span> já não é mais <span className="italic text-brand-gold">falta de competência.</span><span className="hidden md:inline"><br/></span> <span className="font-medium">É nunca<br className="md:hidden" /> ter aprendido a moldar<span className="hidden md:inline"><br/></span> o comportamento humano.</span>
           </h1>
 
-          <p className="text-[18px] md:text-[20px] text-[#081E3B]/70 max-w-3xl mb-4 leading-[1.3] font-normal">
+          <p className="text-[16px] md:text-[20px] text-[#081E3B]/70 max-w-3xl mb-4 leading-[1.3] font-normal">
             Participe de um <strong className="font-bold text-[#081E3B]">treinamento de 2 dias</strong> para desenvolver<br className="hidden md:inline" /> a habilidade que a faculdade nunca te ensinou, mas<br className="hidden md:inline" /> é a que determina o quanto sua técnica realmente<br className="hidden md:inline" /> gera resultado: <strong className="font-bold text-[#081E3B]">a habilidade de guiar pessoas.</strong>
           </p>
 

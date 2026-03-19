@@ -25,6 +25,7 @@ export default async function handler(req, res) {
   } = req.body;
 
   const { error } = await supabase.from('asl0226_pesquisa').insert({
+    evento: 'AHDO-0326',
     faixa_etaria: faixa_etaria || null,
     genero: genero || null,
     trabalho: trabalho || null,

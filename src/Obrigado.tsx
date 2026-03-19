@@ -80,19 +80,12 @@ export default function Obrigado() {
       // Last question — submit
       setTimeout(() => {
         const finalAnswers = { ...answers, [key]: value };
-        const payload = JSON.stringify(finalAnswers);
-        const blob = new Blob([payload], { type: 'application/json' });
-
-        if (navigator.sendBeacon) {
-          navigator.sendBeacon('/api/pesquisa', blob);
-        } else {
-          fetch('/api/pesquisa', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: payload,
-            keepalive: true,
-          }).catch(() => {});
-        }
+        fetch('/api/pesquisa', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(finalAnswers),
+          keepalive: true,
+        }).catch(() => {});
 
         setSubmitted(true);
       }, 400);

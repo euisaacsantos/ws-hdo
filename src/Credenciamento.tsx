@@ -58,19 +58,12 @@ function sendToAC(email: string, phone: string) {
 
 function sendToAPI(email: string, phone: string) {
   const utms = getUtmParams();
-  const payload = JSON.stringify({ email, phone, ...utms });
-  const blob = new Blob([payload], { type: 'application/json' });
-
-  if (navigator.sendBeacon) {
-    navigator.sendBeacon('/api/credenciamento', blob);
-  } else {
-    fetch('/api/credenciamento', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: payload,
-      keepalive: true,
-    }).catch(() => {});
-  }
+  fetch('/api/credenciamento', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, phone, ...utms }),
+    keepalive: true,
+  }).catch(() => {});
 }
 
 function trackEvent(eventName: string) {

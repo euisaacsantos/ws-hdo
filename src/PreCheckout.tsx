@@ -39,19 +39,12 @@ function saveLeadData(name: string, email: string, phone: string) {
 
 function sendToAPI(data: { name: string; email: string; phone: string }, source: 'form' | 'localStorage') {
   const utms = getUtmParams();
-  const payload = JSON.stringify({ ...data, source, ...utms });
-  const blob = new Blob([payload], { type: 'application/json' });
-
-  if (navigator.sendBeacon) {
-    navigator.sendBeacon('/api/cpl-checkout', blob);
-  } else {
-    fetch('/api/cpl-checkout', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: payload,
-      keepalive: true,
-    }).catch(() => {});
-  }
+  fetch('/api/cpl-checkout', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ ...data, source, ...utms }),
+    keepalive: true,
+  }).catch(() => {});
 }
 
 function trackEvent(eventName: string) {

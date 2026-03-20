@@ -68,8 +68,9 @@ function buildHotmartUrl(data: { name: string; email: string; phone: string }): 
   }
 
   const utms = getUtmParams();
-  const sckParts = [utms.utm_source, utms.utm_medium, utms.utm_campaign, utms.utm_content, utms.utm_term]
-    .filter(Boolean)
+  const sckParts = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term']
+    .filter((k) => utms[k])
+    .map((k) => `${k}:${utms[k]}`)
     .join('|');
   if (sckParts) {
     url.searchParams.set('sck', sckParts);

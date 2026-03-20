@@ -152,7 +152,7 @@ export default function App() {
             </div>
           </div>
 
-          <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[12px] md:text-[16px] px-5 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_50px_rgba(207,168,97,0.5),0_0_100px_rgba(207,168,97,0.25)] uppercase tracking-normal md:tracking-wider whitespace-nowrap">
+          <a href="#oferta" className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[12px] md:text-[16px] px-5 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_50px_rgba(207,168,97,0.5),0_0_100px_rgba(207,168,97,0.25)] uppercase tracking-normal md:tracking-wider whitespace-nowrap">
             QUERO DOMINAR A HABILIDADE DE OURO!
           </a>
           </div>
@@ -295,7 +295,7 @@ export default function App() {
             </p>
           </div>
           <div className="flex justify-center mt-10">
-          <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[14px] md:text-[16px] px-8 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-normal md:tracking-wider">
+          <a href="#oferta" className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[14px] md:text-[16px] px-8 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-normal md:tracking-wider">
             É DISSO QUE EU PRECISO!
           </a>
           </div>
@@ -409,7 +409,7 @@ export default function App() {
               </div>
             </div>
             <div className="text-center mt-12">
-              <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[14px] md:text-[16px] px-8 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-normal md:tracking-wider">
+              <a href="#oferta" className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[14px] md:text-[16px] px-8 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-normal md:tracking-wider">
                 QUERO PARTICIPAR DO WORKSHOP!
               </a>
             </div>
@@ -455,7 +455,7 @@ export default function App() {
         </section>
 
         {/* 6ª DOBRA - Offer */}
-        <section className="pt-[240px] pb-10 md:py-24 px-6 bg-brand-navy bg-[url('/assets/BG%20OFERTA%20MOBILE.webp')] md:bg-[url('/assets/BG%20OFERTA%20DESKTOP.webp')] bg-cover bg-top md:bg-[center_bottom_-50px] bg-no-repeat">
+        <section id="oferta" className="pt-[240px] pb-10 md:py-24 px-6 bg-brand-navy bg-[url('/assets/BG%20OFERTA%20MOBILE.webp')] md:bg-[url('/assets/BG%20OFERTA%20DESKTOP.webp')] bg-cover bg-top md:bg-[center_bottom_-50px] bg-no-repeat">
           <div className="max-w-[360px] md:max-w-[1140px] mx-auto flex justify-center md:justify-start">
           <div className="max-w-[520px] md:ml-16 bg-brand-navy-light border border-brand-gold/30 rounded-3xl px-5 py-8 text-center shadow-[0_0_50px_rgba(207,168,97,0.1)] relative overflow-hidden">
             

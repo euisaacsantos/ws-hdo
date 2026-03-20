@@ -531,10 +531,10 @@ export default function App() {
               Tem alguma dúvida?
             </h2>
             <p className="text-white text-[14px] md:text-[16px] mb-8">É só tocar no botão abaixo<br className="md:hidden" /> e falar com meu time:</p>
-            <button onClick={() => sendCAPI('Contact', { content_name: 'Suporte WhatsApp' })} className="bg-gradient-to-r from-[#0B6D40] to-[#0AD778] hover:from-[#095a35] hover:to-[#08c06a] text-white font-bold text-[13px] md:text-[16px] px-5 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 uppercase tracking-normal md:tracking-wider inline-flex items-center gap-1.5 md:gap-3">
+            <a href="https://namah.vc/suporte" target="_blank" rel="noopener noreferrer" onClick={() => sendCAPI('Contact', { content_name: 'Suporte WhatsApp' })} className="bg-gradient-to-r from-[#0B6D40] to-[#0AD778] hover:from-[#095a35] hover:to-[#08c06a] text-white font-bold text-[13px] md:text-[16px] px-5 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 uppercase tracking-normal md:tracking-wider inline-flex items-center gap-1.5 md:gap-3">
               <img src="/assets/WHATSAPP BRANCO.svg" alt="" className="h-5 md:h-6 w-auto shrink-0" />
               Falar com o Suporte no WhatsApp
-            </button>
+            </a>
           </div>
         </section>
 

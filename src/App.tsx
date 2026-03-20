@@ -128,8 +128,8 @@ export default function App() {
         
         {/* 1ª DOBRA - Hero */}
         <section className="pt-[190px] md:pt-20 pb-12 md:pb-24 px-6 bg-[url('/assets/BG1%20MOBILE.png')] bg-cover bg-[center_top_-10px] bg-no-repeat md:bg-[url('/assets/BG1%20DESKTOP.png')] md:bg-cover md:bg-[center_top_-80px] md:bg-no-repeat relative">
+          <img src="/assets/LOGO HDO BRANCO 4.svg" alt="Workshop A Habilidade de Ouro" className="absolute top-6 left-4 h-9 w-auto md:hidden" />
           <div className="max-w-[360px] md:max-w-[1140px] mx-auto text-center md:text-left flex flex-col items-center md:items-start">
-          <img src="/assets/LOGO HDO BRANCO 4.svg" alt="Workshop A Habilidade de Ouro" className="mb-6 h-11 w-auto md:hidden" />
           <img src="/assets/LOGO HDO BRANCO.svg" alt="Workshop A Habilidade de Ouro" className="mb-12 h-16 w-auto hidden md:block" />
 
           <h1 className="text-[26px] md:text-[40px] font-serif text-white leading-[1.0] mb-5 max-w-4xl">

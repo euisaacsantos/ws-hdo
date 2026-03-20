@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { CheckCircle2, LoaderCircle } from 'lucide-react';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
+import PhoneInput, { getPhoneDigits, getMinDigits } from './components/PhoneInput';
 
 const QUESTIONS = [
   {
@@ -59,17 +60,20 @@ const QUESTIONS = [
 export default function Obrigado() {
   const [answers, setAnswers] = useState<{ [key: string]: string }>({});
   const [currentStep, setCurrentStep] = useState(0);
+  const [showContactForm, setShowContactForm] = useState(false);
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('+55');
   const [submitted, setSubmitted] = useState(false);
   const questionRef = useRef<HTMLDivElement>(null);
 
   const totalSteps = QUESTIONS.length;
-  const progress = submitted ? 100 : Math.round((currentStep / totalSteps) * 100);
+  const progress = submitted ? 100 : showContactForm ? Math.round(((totalSteps) / (totalSteps + 1)) * 100) : Math.round((currentStep / (totalSteps + 1)) * 100);
 
   useEffect(() => {
-    if (questionRef.current && currentStep > 0 && currentStep < totalSteps) {
+    if (questionRef.current && currentStep > 0) {
       questionRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
-  }, [currentStep, totalSteps]);
+  }, [currentStep, showContactForm]);
 
   function handleSelect(key: string, value: string) {
     setAnswers((prev) => ({ ...prev, [key]: value }));
@@ -77,19 +81,24 @@ export default function Obrigado() {
     if (currentStep < totalSteps - 1) {
       setTimeout(() => setCurrentStep((prev) => prev + 1), 400);
     } else {
-      // Last question — submit
-      setTimeout(() => {
-        const finalAnswers = { ...answers, [key]: value };
-        fetch('/api/pesquisa', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(finalAnswers),
-          keepalive: true,
-        }).catch(() => {});
-
-        setSubmitted(true);
-      }, 400);
+      setTimeout(() => setShowContactForm(true), 400);
     }
+  }
+
+  function handleContactSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    const digits = getPhoneDigits(phone);
+    const minDigits = getMinDigits(phone);
+    if (!email.includes('@') || digits.length < minDigits) return;
+
+    fetch('/api/pesquisa', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...answers, email, phone }),
+      keepalive: true,
+    }).catch(() => {});
+
+    setSubmitted(true);
   }
 
   const current = QUESTIONS[currentStep];
@@ -130,29 +139,62 @@ export default function Obrigado() {
               </p>
             </div>
 
-            {/* Question Card */}
-            <div ref={questionRef} className="border border-white/10 rounded-2xl bg-white/5 p-6 md:p-8">
-              <p className="text-[16px] md:text-lg text-white font-medium mb-5">
-                <span className="text-brand-gold mr-2">{currentStep + 1}.</span>
-                {current.question}
-              </p>
-              <div className="space-y-2">
-                {current.options.map((opt) => (
-                  <button
-                    type="button"
-                    key={opt}
-                    onClick={() => handleSelect(current.key, opt)}
-                    className={`w-full text-left px-4 py-3.5 rounded-lg text-[14px] md:text-[15px] transition-all duration-200 border ${
-                      answers[current.key] === opt
-                        ? 'bg-gradient-to-r from-[#966E16] to-[#D6B865] text-white border-transparent scale-[1.01]'
-                        : 'bg-white/5 text-white border-white/10 hover:border-brand-gold/40 hover:bg-white/10'
-                    }`}
-                  >
-                    {opt}
-                  </button>
-                ))}
+            {!showContactForm ? (
+              /* Question Card */
+              <div ref={questionRef} className="border border-white/10 rounded-2xl bg-white/5 p-6 md:p-8">
+                <p className="text-[16px] md:text-lg text-white font-medium mb-5">
+                  <span className="text-brand-gold mr-2">{currentStep + 1}.</span>
+                  {current.question}
+                </p>
+                <div className="space-y-2">
+                  {current.options.map((opt) => (
+                    <button
+                      type="button"
+                      key={opt}
+                      onClick={() => handleSelect(current.key, opt)}
+                      className={`w-full text-left px-4 py-3.5 rounded-lg text-[14px] md:text-[15px] transition-all duration-200 border ${
+                        answers[current.key] === opt
+                          ? 'bg-gradient-to-r from-[#966E16] to-[#D6B865] text-white border-transparent scale-[1.01]'
+                          : 'bg-white/5 text-white border-white/10 hover:border-brand-gold/40 hover:bg-white/10'
+                      }`}
+                    >
+                      {opt}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
+            ) : (
+              /* Contact Form */
+              <div ref={questionRef} className="border border-white/10 rounded-2xl bg-white/5 p-6 md:p-8">
+                <p className="text-[16px] md:text-lg text-white font-medium mb-6">
+                  <span className="text-brand-gold mr-2">{totalSteps + 1}.</span>
+                  Para cruzar com sua compra, informe o e-mail e WhatsApp que você usou no checkout:
+                </p>
+                <form onSubmit={handleContactSubmit} className="space-y-4">
+                  <div>
+                    <label className="block text-sm text-white/60 mb-1.5">E-mail de compra</label>
+                    <input
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="voce@email.com"
+                      className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white text-sm outline-none focus:border-brand-gold transition-colors placeholder:text-white/30"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm text-white/60 mb-1.5">WhatsApp de compra</label>
+                    <PhoneInput value={phone} onChange={setPhone} dark />
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[14px] md:text-[16px] px-6 py-4 rounded-xl transition-all duration-200 hover:scale-[1.02] uppercase tracking-wider flex items-center justify-center gap-2"
+                  >
+                    Finalizar <ArrowRight className="w-4 h-4" />
+                  </button>
+                </form>
+              </div>
+            )}
           </>
         ) : (
           <div className="text-center py-12 border border-white/10 rounded-2xl bg-white/5 px-6">
@@ -166,7 +208,9 @@ export default function Obrigado() {
               Agora toque no botão abaixo e entre no nosso<br className="hidden md:inline" /> grupo de alunos para receber todos os avisos<br className="hidden md:inline" /> e materiais do workshop:
             </p>
             <a
-              href="https://LINK-DO-GRUPO-AQUI"
+              href="https://namah.vc/wk-hdo-grupo-vip"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-gradient-to-r from-[#0B6D40] to-[#0AD778] hover:from-[#095a35] hover:to-[#08c06a] text-white font-bold text-[14px] md:text-[16px] px-8 py-5 rounded-lg transition-all duration-300 transform hover:scale-105 uppercase tracking-wider"
             >
               <img src="/assets/WHATSAPP BRANCO.svg" alt="" className="h-6 w-auto" />

@@ -65,9 +65,10 @@ interface PhoneInputProps {
   value: string;
   onChange: (fullPhone: string) => void;
   className?: string;
+  dark?: boolean;
 }
 
-export default function PhoneInput({ value, onChange, className }: PhoneInputProps) {
+export default function PhoneInput({ value, onChange, className, dark }: PhoneInputProps) {
   const [country, setCountry] = useState(COUNTRIES[0]);
   const [localDigits, setLocalDigits] = useState('');
   const [open, setOpen] = useState(false);
@@ -127,11 +128,11 @@ export default function PhoneInput({ value, onChange, className }: PhoneInputPro
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1.5 px-3 py-3 bg-gray-50 border border-r-0 border-gray-400 rounded-l-xl text-sm shrink-0"
+        className={`flex items-center gap-1.5 px-3 py-3 border border-r-0 rounded-l-xl text-sm shrink-0 ${dark ? 'bg-white/10 border-white/20' : 'bg-gray-50 border-gray-400'}`}
       >
         <FlagImg code={country.code} />
-        <span className="text-gray-600 text-xs">{country.dial}</span>
-        <svg className="w-3 h-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+        <span className={`text-xs ${dark ? 'text-white/70' : 'text-gray-600'}`}>{country.dial}</span>
+        <svg className={`w-3 h-3 ${dark ? 'text-white/40' : 'text-gray-400'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
       </button>
 
       {open && (
@@ -168,7 +169,7 @@ export default function PhoneInput({ value, onChange, className }: PhoneInputPro
         value={displayValue}
         onChange={(e) => handleDigitsChange(e.target.value)}
         placeholder={country.code === 'BR' ? '(11) 99999-0001' : 'Telefone'}
-        className={className || 'flex-1 px-4 py-3 border border-gray-400 rounded-r-xl text-sm text-gray-800 outline-none focus:border-brand-gold transition-colors placeholder:text-gray-400'}
+        className={className || (dark ? 'flex-1 px-4 py-3 border border-white/20 rounded-r-xl text-sm text-white bg-white/10 outline-none focus:border-brand-gold transition-colors placeholder:text-white/30' : 'flex-1 px-4 py-3 border border-gray-400 rounded-r-xl text-sm text-gray-800 outline-none focus:border-brand-gold transition-colors placeholder:text-gray-400')}
       />
     </div>
   );

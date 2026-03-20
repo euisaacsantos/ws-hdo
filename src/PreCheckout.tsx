@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ShoppingCart, ArrowRight } from 'lucide-react';
 import PhoneInput, { getPhoneDigits, getMinDigits } from './components/PhoneInput';
 
-const HOTMART_BASE_URL = 'https://pay.hotmart.com/PRODUCT_ID?off=OFFER_ID&checkoutMode=10';
+const HOTMART_BASE_URL = 'https://pay.hotmart.com/Y104988994A?off=tujyxow2&checkoutMode=10';
 const LEAD_TTL_MS = 3 * 24 * 60 * 60 * 1000;
 
 // ── Helpers ──
@@ -68,8 +68,9 @@ function buildHotmartUrl(data: { name: string; email: string; phone: string }): 
   }
 
   const utms = getUtmParams();
-  const sckParts = [utms.utm_source, utms.utm_medium, utms.utm_campaign, utms.utm_content, utms.utm_term]
-    .filter(Boolean)
+  const sckParts = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term']
+    .filter((k) => utms[k])
+    .map((k) => `${k}:${utms[k]}`)
     .join('|');
   if (sckParts) {
     url.searchParams.set('sck', sckParts);

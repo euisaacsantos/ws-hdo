@@ -22,6 +22,8 @@ export default async function handler(req, res) {
     desafio,
     objetivo,
     experiencia,
+    email,
+    phone,
   } = req.body;
 
   const { error } = await supabase.from('asl0226_hdo_pesquisa').insert({
@@ -33,6 +35,8 @@ export default async function handler(req, res) {
     desafio: desafio || null,
     objetivo: objetivo || null,
     experiencia: experiencia || null,
+    email: email || null,
+    phone: phone || null,
   });
 
   if (error) {

@@ -109,16 +109,16 @@ export default function App() {
     <div className="min-h-screen bg-brand-navy text-brand-text font-sans selection:bg-brand-gold selection:text-brand-navy">
       
       {/* Top Bar */}
-      <div className="bg-gradient-to-r from-[#19427B] to-[#061933] border-b border-white/10 py-3 md:py-3 px-4 text-xs md:text-sm tracking-widest uppercase z-50 relative">
+      <div className="bg-white border-b border-[#081E3B]/10 py-3 md:py-3 px-4 text-xs md:text-sm tracking-widest uppercase z-50 relative">
         <div className="max-w-[360px] md:max-w-[1140px] mx-auto flex flex-col md:flex-row items-center gap-1 md:gap-6">
-          <span className="text-[11px] md:text-[16px] font-bold text-white flex items-center gap-2">
-            <img src="/assets/CALENDARIO BRANCO.svg" alt="" className="h-[11px] md:h-[16px] w-auto" />
+          <span className="text-[11px] md:text-[16px] font-bold text-[#081E3B] flex items-center gap-2">
+            <img src="/assets/CALENDARIO GOLD.svg" alt="" className="h-[11px] md:h-[16px] w-auto" />
             28 e 29 de março, às 09h
           </span>
-          <span className="hidden md:inline text-white">|</span>
+          <span className="hidden md:inline text-[#081E3B]/30">|</span>
           <div className="flex flex-col md:flex-row items-center gap-1 md:gap-2 text-[11px] md:text-[16px] font-bold">
             <span className="text-brand-gold">O lote de ingressos encerra em</span>
-            <span className="text-white bg-white/10 px-3 py-1 rounded-md">{formatTime(timeLeft.days)}d : {formatTime(timeLeft.hours)}h : {formatTime(timeLeft.minutes)}m : {formatTime(timeLeft.seconds)}s</span>
+            <span className="text-[#081E3B] bg-[#081E3B]/10 px-3 py-1 rounded-md">{formatTime(timeLeft.days)}d : {formatTime(timeLeft.hours)}h : {formatTime(timeLeft.minutes)}m : {formatTime(timeLeft.seconds)}s</span>
           </div>
         </div>
       </div>
@@ -127,32 +127,32 @@ export default function App() {
       <main className="relative z-10 [&>section+section]:mt-0">
         
         {/* 1ª DOBRA - Hero */}
-        <section className="pt-[210px] md:pt-20 pb-12 md:pb-24 px-6 bg-[url('/assets/BG1%20MOBILE.webp')] bg-cover bg-[center_top_-30px] bg-no-repeat md:bg-[url('/assets/BG1%20DESKTOP.webp')] md:bg-cover md:bg-[center_top_-80px] md:bg-no-repeat relative">
-          <img src="/assets/LOGO HDO AZUL.svg" alt="Workshop A Habilidade de Ouro" className="absolute top-[45px] left-4 h-11 w-auto md:hidden" />
+        <section className="pt-[190px] md:pt-20 pb-12 md:pb-24 px-6 bg-[url('/assets/BG1%20MOBILE.png')] bg-cover bg-[center_top_-10px] bg-no-repeat md:bg-[url('/assets/BG1%20DESKTOP.png')] md:bg-cover md:bg-[center_top_-80px] md:bg-no-repeat relative">
           <div className="max-w-[360px] md:max-w-[1140px] mx-auto text-center md:text-left flex flex-col items-center md:items-start">
-          <img src="/assets/LOGO HDO AZUL.svg" alt="Workshop A Habilidade de Ouro" className="mb-12 h-16 w-auto hidden md:block" />
+          <img src="/assets/LOGO HDO BRANCO 4.svg" alt="Workshop A Habilidade de Ouro" className="mb-6 h-11 w-auto md:hidden" />
+          <img src="/assets/LOGO HDO BRANCO.svg" alt="Workshop A Habilidade de Ouro" className="mb-12 h-16 w-auto hidden md:block" />
 
-          <h1 className="text-[26px] md:text-[40px] font-serif text-[#081E3B] leading-[1.0] mb-5 max-w-4xl">
-            O problema da sua vida profissional<span className="hidden md:inline"><br/></span> já não é mais falta de competência.<span className="hidden md:inline"><br/></span> <span className="font-medium">É nunca<br className="md:hidden" /> ter aprendido a moldar<span className="hidden md:inline"><br/></span> o comportamento humano.</span>
+          <h1 className="text-[26px] md:text-[40px] font-serif text-white leading-[1.0] mb-5 max-w-4xl">
+            O problema da sua vida profissional<span className="hidden md:inline"><br/></span> já não é mais falta de competência.<span className="hidden md:inline"><br/></span> <span className="font-medium">É nunca ter aprendido a moldar<span className="hidden md:inline"><br/></span> o comportamento humano.</span>
           </h1>
 
-          <p className="text-[16px] md:text-[20px] text-[#081E3B]/70 max-w-3xl mb-4 leading-[1.3] font-normal">
-            Participe de um <strong className="font-bold text-[#081E3B]">treinamento de 2 dias</strong> para desenvolver<br className="hidden md:inline" /> a habilidade que a faculdade nunca te ensinou, mas<br className="hidden md:inline" /> é a que determina o quanto sua técnica realmente<br className="hidden md:inline" /> gera resultado: <strong className="font-bold text-[#081E3B]">a habilidade de guiar pessoas.</strong>
+          <p className="text-[16px] md:text-[20px] text-white/70 max-w-3xl mb-4 leading-[1.3] font-normal">
+            Participe de um <strong className="font-bold text-white">treinamento de 2 dias</strong> para desenvolver<br className="hidden md:inline" /> a habilidade que a faculdade nunca te ensinou, mas<br className="hidden md:inline" /> é a que determina o quanto sua técnica realmente<br className="hidden md:inline" /> gera resultado: <strong className="font-bold text-white">a habilidade de guiar pessoas.</strong>
           </p>
 
-          <div className="flex flex-nowrap justify-center md:justify-start items-center gap-2 md:gap-3 mb-6 text-[11px] md:text-base text-[#081E3B]/80 font-medium tracking-wide border border-[#CED2D8] rounded-md px-2 md:px-4 py-2 whitespace-nowrap">
+          <div className="flex flex-nowrap justify-center md:justify-start items-center gap-2 md:gap-3 mb-6 text-[11px] md:text-base text-white/80 font-medium tracking-wide border border-white/20 rounded-md px-2 md:px-4 py-2 whitespace-nowrap bg-black/40 backdrop-blur-md">
             <div className="flex items-center gap-1 md:gap-2">
               <img src="/assets/CALENDARIO GOLD.svg" alt="" className="h-4 md:h-5 w-auto shrink-0" />
               28 e 29 de março, às 09h
             </div>
-            <span className="text-[#081E3B]/40">|</span>
+            <span className="text-white/40">|</span>
             <div className="flex items-center gap-1 md:gap-2">
               <img src="/assets/PLAY GOLD.svg" alt="" className="h-4 md:h-5 w-auto shrink-0" />
               100% ao vivo
             </div>
           </div>
 
-          <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[14px] md:text-[16px] px-8 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-normal md:tracking-wider">
+          <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[12px] md:text-[16px] px-5 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_50px_rgba(207,168,97,0.5),0_0_100px_rgba(207,168,97,0.25)] uppercase tracking-normal md:tracking-wider whitespace-nowrap">
             QUERO DOMINAR A HABILIDADE DE OURO!
           </a>
           </div>
@@ -247,10 +247,7 @@ export default function App() {
                     É professora nos programas de desenvolvimento pessoal e profissional da Carol Rache, onde já impactou milhares de alunas.
                   </p>
                   <p className="text-white text-[16px] md:text-sm leading-relaxed">
-                    E agora, vai caminhar ao lado da Carol na Formação Ilumina.
-                  </p>
-                  <p className="text-white text-[16px] md:text-sm leading-relaxed">
-                    Eduarda vai te <strong className="font-bold">conduzir na construção da sua clareza</strong>, da sua presença e da voz que você precisa assumir como Mentora.
+                    No Workshop A Habilidade de Ouro, Eduarda vai te <strong className="font-bold">conduzir na construção da sua clareza</strong>, da sua presença e da voz que você precisa assumir para destravar um novo nível profissional.
                   </p>
               </div>
 
@@ -261,12 +258,12 @@ export default function App() {
         {/* 3ª DOBRA - The Gap */}
         <section className="py-10 md:py-16 px-6 bg-white">
           <div className="max-w-[360px] md:max-w-[1140px] mx-auto text-left md:text-center">
-          <h2 className="text-3xl md:text-[40px] font-serif text-[#081E3B] mb-10 text-center">
-            O que essas pessoas vão<br className="md:hidden"/> te ensinar nos dias<br className="md:hidden"/> 28 e 29 de março:
+          <h2 className="text-3xl md:text-[40px] font-serif text-[#081E3B] mb-10 text-left md:text-center">
+            O que essas pessoas vão<br className="md:hidden"/> te ensinar nos dias<br className="md:hidden"/> <span className="font-medium">28 e 29 de março:</span>
           </h2>
 
-          <div className="space-y-8 text-[16px] md:text-lg text-[#081E3B] leading-relaxed font-light">
-            <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
+          <div className="space-y-4 md:space-y-8 text-[16px] md:text-lg text-[#081E3B] leading-relaxed font-light">
+            <div className="hidden md:flex flex-col md:flex-row gap-6 items-center justify-center">
               <div className="flex flex-col md:flex-row gap-4 justify-center">
                 <div className="flex items-center justify-center gap-3 border border-brand-gold/30 rounded-lg px-5 py-4 bg-[#081E3B]/5 w-full md:w-auto">
                   <img src="/assets/CALENDARIO GOLD.svg" alt="" className="h-6 w-auto" />
@@ -287,7 +284,7 @@ export default function App() {
             <p>
               Nós vamos mergulhar exatamente na habilidade que a maioria dos profissionais nunca aprendeu, mas que determina o quanto sua técnica realmente gera resultados.
             </p>
-            <p className="text-[16px] md:text-xl text-[#081E3B] font-medium border-y border-brand-gold py-6 w-fit mx-auto">
+            <p className="text-[16px] md:text-xl text-[#081E3B] font-medium md:border-y md:border-brand-gold py-0 md:py-6 w-fit mx-auto">
               Porque existe um detalhe que quase ninguém percebe durante a formação profissional: você aprende o que fazer.<br className="md:hidden"/> Mas nunca aprende <span className="text-brand-gold italic">como fazer as pessoas realmente aplicarem aquilo que você propõe.</span>
             </p>
             <div className="border border-[#CED2D8] rounded-md px-4 py-4 w-fit mx-auto">
@@ -301,6 +298,10 @@ export default function App() {
           <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[14px] md:text-[16px] px-8 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-normal md:tracking-wider">
             É DISSO QUE EU PRECISO!
           </a>
+          </div>
+          <div className="flex flex-col gap-4 mt-8 md:hidden">
+            <img src="/assets/IMG TRANSICAO 1.png" alt="" className="w-full rounded-lg" />
+            <img src="/assets/IMG TRANSICAO 2.png" alt="" className="w-full rounded-lg" />
           </div>
           </div>
         </section>
@@ -454,7 +455,7 @@ export default function App() {
         </section>
 
         {/* 6ª DOBRA - Offer */}
-        <section className="pt-[280px] pb-10 md:py-24 px-6 bg-brand-navy bg-[url('/assets/BG%20OFERTA%20MOBILE.webp')] md:bg-[url('/assets/BG%20OFERTA%20DESKTOP.webp')] bg-cover bg-top md:bg-[center_bottom_-50px] bg-no-repeat">
+        <section className="pt-[240px] pb-10 md:py-24 px-6 bg-brand-navy bg-[url('/assets/BG%20OFERTA%20MOBILE.webp')] md:bg-[url('/assets/BG%20OFERTA%20DESKTOP.webp')] bg-cover bg-top md:bg-[center_bottom_-50px] bg-no-repeat">
           <div className="max-w-[360px] md:max-w-[1140px] mx-auto flex justify-center md:justify-start">
           <div className="max-w-[520px] md:ml-16 bg-brand-navy-light border border-brand-gold/30 rounded-3xl px-5 py-8 text-center shadow-[0_0_50px_rgba(207,168,97,0.1)] relative overflow-hidden">
             
@@ -491,7 +492,7 @@ export default function App() {
               </div>
             </div>
 
-            <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block w-full md:w-auto bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[14px] md:text-[16px] px-8 md:px-12 py-4 md:py-5 rounded-lg whitespace-nowrap transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-wider text-center">
+            <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="block w-auto bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[12px] md:text-[16px] px-4 md:px-12 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-wider text-center mx-auto">
               Garantir minha vaga agora
             </a>
           </div>
@@ -538,8 +539,9 @@ export default function App() {
         </section>
 
         {/* 9ª DOBRA - FAQ */}
-        <section className="py-10 md:py-16 px-6 max-w-[360px] md:max-w-[1140px] mx-auto">
-          <h2 className="text-3xl md:text-[40px] font-serif text-center text-white mb-10">
+        <section className="py-10 md:py-16 px-6 bg-white">
+          <div className="max-w-[360px] md:max-w-[1140px] mx-auto">
+          <h2 className="text-3xl md:text-[40px] font-serif text-center text-[#081E3B] mb-10">
             Perguntas Frequentes
           </h2>
 
@@ -561,12 +563,13 @@ export default function App() {
               answer="Sim. Você receberá uma apostila da imersão, com os principais conceitos e estruturas abordadas durante o workshop, para que possa revisar e aplicar o conteúdo depois com mais clareza."
             />
           </div>
+          </div>
         </section>
 
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 py-12 px-6 text-center text-sm text-white/40">
+      <footer className="bg-white border-t border-[#081E3B]/10 py-12 px-6 text-center text-sm text-[#081E3B]/40">
         <div className="max-w-[360px] md:max-w-[1140px] mx-auto">
           <p>Copyright © 2026 Carol Rache<br className="md:hidden"/> Todos os direitos reservados</p>
         </div>
@@ -579,18 +582,18 @@ function FAQItem({ question, answer }: { question: string, answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-white/10">
-      <button 
+    <div className="border-b border-[#081E3B]/10">
+      <button
         className="w-full text-left py-6 flex justify-between items-center focus:outline-none group"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <h3 className="text-[16px] md:text-[20px] font-bold text-white group-hover:text-brand-gold transition-colors pr-8" style={{fontFamily: 'var(--font-sans)'}}>{question}</h3>
-        <ChevronDown className={`w-5 h-5 text-white/50 transition-transform duration-300 shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
+        <h3 className="text-[16px] md:text-[20px] font-bold text-[#081E3B] group-hover:text-brand-gold transition-colors pr-8" style={{fontFamily: 'var(--font-sans)'}}>{question}</h3>
+        <ChevronDown className={`w-5 h-5 text-[#081E3B]/50 transition-transform duration-300 shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
-      <div 
+      <div
         className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-0'}`}
       >
-        <p className="text-white text-[16px] font-light leading-relaxed">{answer}</p>
+        <p className="text-[#081E3B] text-[16px] font-light leading-relaxed">{answer}</p>
       </div>
     </div>
   );

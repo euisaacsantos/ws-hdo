@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ShoppingCart, ArrowRight } from 'lucide-react';
 import PhoneInput, { getPhoneDigits, getMinDigits } from './components/PhoneInput';
 
-const HOTMART_BASE_URL = 'https://pay.hotmart.com/PRODUCT_ID?off=OFFER_ID&checkoutMode=10';
+const HOTMART_BASE_URL = 'https://pay.hotmart.com/Y104988994A?off=tujyxow2&checkoutMode=10';
 const LEAD_TTL_MS = 3 * 24 * 60 * 60 * 1000;
 
 // ── Helpers ──

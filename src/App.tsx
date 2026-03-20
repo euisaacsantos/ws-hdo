@@ -6,7 +6,7 @@
 import { CheckCircle2, ChevronDown, Clock, Calendar, MonitorPlay } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-const CHECKOUT_URL = 'https://pay.hotmart.com/SEU-CHECKOUT-AQUI';
+const CHECKOUT_URL = 'https://pay.hotmart.com/Y104988994A?off=tujyxow2&checkoutMode=10';
 
 declare global {
   interface Window { fbq: (...args: unknown[]) => void; }

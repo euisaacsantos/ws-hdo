@@ -133,11 +133,11 @@ export default function App() {
           <img src="/assets/LOGO HDO AZUL.svg" alt="Workshop A Habilidade de Ouro" className="mb-12 h-16 w-auto hidden md:block" />
 
           <h1 className="text-[26px] md:text-[40px] font-serif text-white md:text-[#081E3B] leading-[1.0] mb-5 max-w-4xl">
-            O problema da sua vida profissional<span className="hidden md:inline"><br/></span> já não é mais falta de competência.<span className="hidden md:inline"><br/></span> <span className="font-medium">É nunca ter aprendido a moldar<span className="hidden md:inline"><br/></span> o comportamento humano.</span>
+            O problema da sua vida profissional<span className="hidden md:inline"><br/></span> não é falta de competência.<span className="hidden md:inline"><br/></span> <span className="font-medium">É nunca ter aprendido a moldar<span className="hidden md:inline"><br/></span> o comportamento humano.</span>
           </h1>
 
           <p className="text-[16px] md:text-[20px] text-white md:text-[#081E3B]/70 max-w-3xl mb-4 leading-[1.3] font-light">
-            Participe de um <strong className="font-bold text-white md:text-[#081E3B]">treinamento de 2 dias</strong> para desenvolver<br className="hidden md:inline" /> a habilidade que a faculdade nunca te ensinou, mas<br className="hidden md:inline" /> é a que determina o quanto sua técnica realmente<br className="hidden md:inline" /> gera resultado: <strong className="font-bold text-white md:text-[#081E3B]">a habilidade de guiar pessoas.</strong>
+            Em um <strong className="font-bold text-white md:text-[#081E3B]">treinamento de dois dias</strong> você desenvolverá<br className="hidden md:inline" /> a habilidade que nenhuma faculdade te ensinou, mas<br className="hidden md:inline" /> que é determinante para o seu sucesso:<br className="hidden md:inline" /> <strong className="font-bold text-white md:text-[#081E3B]">a habilidade de destravar pessoas.</strong>
           </p>
 
           <div className="flex flex-nowrap justify-center md:justify-start items-center gap-2 md:gap-3 mb-6 text-[11px] md:text-base text-white/80 md:text-[#081E3B]/80 font-medium tracking-wide border border-white/20 md:border-[#CED2D8] rounded-md px-2 md:px-4 py-2 whitespace-nowrap bg-black/40 md:bg-transparent backdrop-blur-md md:backdrop-blur-none">
@@ -158,7 +158,285 @@ export default function App() {
           </div>
         </section>
 
-        {/* 2ª DOBRA - Mentors */}
+        {/* 2ª DOBRA - A Verdade */}
+        <section className="py-12 md:py-20 px-6 bg-white md:bg-[url('/assets/BG%20BASE%20CLARA%201%20DESKTOP.png')] md:bg-cover md:bg-center md:bg-no-repeat">
+          <div className="max-w-[360px] md:max-w-[1140px] mx-auto">
+
+            {/* Bloco 1 - Abertura */}
+            <div className="text-left md:text-center mb-10 md:mb-16">
+              <h2 className="text-[26px] md:text-[40px] font-serif text-[#081E3B] leading-[1.1] mb-4">
+                Você aprendeu que o que valia era <span className="font-medium">esforço e conhecimento.</span>
+              </h2>
+              <p className="text-[18px] md:text-[24px] text-brand-gold font-medium">
+                Mas o mercado não recompensa isso.
+              </p>
+              <p className="text-[16px] md:text-[20px] text-[#081E3B]/70 mt-2">
+                O mercado recompensa <strong className="font-bold text-[#081E3B]">resultado.</strong>
+              </p>
+            </div>
+
+            {/* Bloco 2 - Exemplos */}
+            <div className="space-y-6 mb-10 md:mb-16 md:max-w-2xl md:mx-auto">
+              <div className="border-l-4 border-brand-gold pl-5 py-2">
+                <p className="text-[16px] md:text-lg text-[#081E3B] leading-relaxed">
+                  Um nutricionista que não gera emagrecimento <strong className="font-bold">não tem relevância</strong>, mesmo cheio de certificados.
+                </p>
+              </div>
+              <div className="border-l-4 border-brand-gold pl-5 py-2">
+                <p className="text-[16px] md:text-lg text-[#081E3B] leading-relaxed">
+                  Uma prestadora de serviço que não gera resultado pro cliente <strong className="font-bold">não se sustenta</strong>, mesmo sendo tecnicamente boa.
+                </p>
+              </div>
+            </div>
+
+            {/* Bloco 3 - Verdade central */}
+            <div className="bg-[#081E3B] rounded-2xl px-6 md:px-12 py-8 md:py-12 text-center mb-10 md:mb-16 md:max-w-2xl md:mx-auto">
+              <p className="text-[16px] md:text-xl text-white/80 leading-relaxed mb-4">
+                Porque no final do dia, ninguém paga pelo que você sabe.
+              </p>
+              <p className="text-[20px] md:text-[28px] font-serif text-white leading-[1.2]">
+                As pessoas pagam pelo que você <span className="text-brand-gold font-medium">faz acontecer.</span>
+              </p>
+            </div>
+
+            {/* Bloco 4 - Provocação */}
+            <div className="text-left md:text-center mb-10 md:mb-12">
+              <p className="text-[16px] md:text-xl text-[#081E3B]/70 leading-relaxed mb-6">
+                E se você não sabe fazer o outro agir… <strong className="font-bold text-[#081E3B]">você não gera resultado.</strong>
+              </p>
+              <p className="text-[16px] md:text-lg text-[#081E3B]/70 leading-relaxed mb-2">
+                É por isso que a habilidade mais valiosa hoje não é técnica.
+              </p>
+              <p className="text-[20px] md:text-[28px] font-serif text-[#081E3B] font-medium">
+                É comportamental.
+              </p>
+            </div>
+
+            {/* Bloco 5 - CTA */}
+            <div className="bg-[#081E3B]/5 border border-[#CED2D8] rounded-2xl px-6 md:px-12 py-8 md:py-10 text-center md:max-w-2xl md:mx-auto">
+              <p className="text-[22px] md:text-[32px] font-serif text-[#081E3B] mb-6 leading-[1.1]">
+                Você precisa saber <span className="text-brand-gold font-medium">destravar pessoas.</span>
+              </p>
+              <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[14px] md:text-[16px] px-16 md:px-20 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-normal md:tracking-wider whitespace-nowrap">
+                QUERO APRENDER
+              </a>
+            </div>
+
+          </div>
+        </section>
+
+        {/* 3ª DOBRA - Schedule */}
+        <section className="py-10 md:py-16 px-6 bg-[url('/assets/BG%20BASE%20DESKTOP.webp')] bg-cover bg-center bg-no-repeat" style={{transform: 'scaleX(-1)'}}>
+          <div className="max-w-[360px] md:max-w-[1140px] mx-auto" style={{transform: 'scaleX(-1)'}}>
+            <h2 className="text-3xl md:text-[40px] font-serif text-center text-white mb-10">
+              Em 2 dias, você vai entender por que não consegue<br /> gerar resultado e o que fazer pra mudar isso.
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-12">
+              {/* Saturday */}
+              <div className="bg-white/10 p-8 md:p-12 rounded-2xl border border-white/10 relative overflow-hidden group hover:border-brand-gold/30 transition-colors">
+                <div className="absolute top-0 left-0 w-1 h-full bg-brand-gold transform origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500"></div>
+
+                <h3 className="text-[30px] md:text-[36px] font-serif text-brand-gold mb-2">Sábado, 28 de março</h3>
+                <p className="text-[16px] md:text-sm text-white uppercase tracking-wider mb-8 flex items-center gap-2">
+                  <Clock className="w-4 h-4" /> das 9h às 12h
+                </p>
+
+                <div className="space-y-5 text-white font-light leading-relaxed text-[16px] text-left">
+                  <p className="font-medium text-[18px]">Você começa entendendo uma coisa simples: você só é bem paga quando gera resultado.</p>
+
+                  <p>E resultado não vem de técnica.<br />Vem de <strong className="font-bold">comportamento.</strong></p>
+
+                  <div className="bg-white/5 border border-white/10 rounded-xl p-6 my-4">
+                    <ul className="space-y-4">
+                      <li className="flex gap-3 items-start">
+                        <span className="text-brand-gold mt-1">✦</span>
+                        <span>Por que as pessoas não se movem (mesmo querendo)</span>
+                      </li>
+                      <li className="flex gap-3 items-start">
+                        <span className="text-brand-gold mt-1">✦</span>
+                        <span>O que está travando seus resultados hoje</span>
+                      </li>
+                      <li className="flex gap-3 items-start">
+                        <span className="text-brand-gold mt-1">✦</span>
+                        <span>Como o comportamento humano impacta diretamente o que você ganha</span>
+                      </li>
+                      <li className="flex gap-3 items-start">
+                        <span className="text-brand-gold mt-1">✦</span>
+                        <span>A conexão entre mente, corpo e ação</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <p className="font-medium text-white">Você vai sair do sábado com <span className="text-brand-gold">clareza.</span></p>
+
+                  <p className="italic text-white/80">Clareza do porquê você tenta, mas não consegue fazer as pessoas avançarem.</p>
+                </div>
+              </div>
+
+              {/* Sunday */}
+              <div className="bg-white/10 p-8 md:p-12 rounded-2xl border border-white/10 relative overflow-hidden group hover:border-brand-gold/30 transition-colors">
+                <div className="absolute top-0 left-0 w-1 h-full bg-brand-gold transform origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500"></div>
+
+                <h3 className="text-[30px] md:text-[36px] font-serif text-brand-gold mb-2">Domingo, 29 de março</h3>
+                <p className="text-[16px] md:text-sm text-white uppercase tracking-wider mb-8 flex items-center gap-2">
+                  <Clock className="w-4 h-4" /> das 9h às 12h
+                </p>
+
+                <div className="space-y-5 text-white font-light leading-relaxed text-[16px] text-left">
+                  <p className="font-medium text-[18px]">Aqui você entende o que realmente controla comportamento.</p>
+
+                  <p>E como usar isso <strong className="font-bold">a seu favor.</strong></p>
+
+                  <div className="bg-white/5 border border-white/10 rounded-xl p-6 my-4">
+                    <ul className="space-y-4">
+                      <li className="flex gap-3 items-start">
+                        <span className="text-brand-gold mt-1">✦</span>
+                        <span>O que está por trás de toda decisão humana</span>
+                      </li>
+                      <li className="flex gap-3 items-start">
+                        <span className="text-brand-gold mt-1">✦</span>
+                        <span>Como antecipar objeções antes mesmo delas aparecerem</span>
+                      </li>
+                      <li className="flex gap-3 items-start">
+                        <span className="text-brand-gold mt-1">✦</span>
+                        <span>A diferença entre tentar convencer e realmente influenciar</span>
+                      </li>
+                      <li className="flex gap-3 items-start">
+                        <span className="text-brand-gold mt-1">✦</span>
+                        <span>Como transformar isso em posicionamento e venda</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <p className="font-medium text-white text-[18px]">E no final, você entende o <span className="text-brand-gold">caminho completo.</span></p>
+
+                  <p className="italic text-white/80">Como sair de alguém que sabe… pra alguém que gera resultado, e é paga por isso.</p>
+                </div>
+              </div>
+            </div>
+            <div className="text-center mt-12">
+              <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[14px] md:text-[16px] px-16 md:px-20 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-normal md:tracking-wider">
+                É DISSO QUE EU PRECISO!
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Target Audience */}
+        <section className="pt-10 pb-10 md:pt-16 md:pb-16 px-6 bg-white">
+          <div className="max-w-[360px] md:max-w-[1140px] mx-auto">
+          <h2 className="text-3xl md:text-[40px] font-serif text-center text-[#081E3B] mb-4 md:mb-10">
+            Para quem é o <span className="italic text-brand-gold">Workshop<br className="md:hidden"/> A Habilidade de Ouro?</span>
+          </h2>
+
+          <p className="text-[16px] md:text-xl text-center text-[#081E3B]/80 mb-6 md:mb-12">Ele é especialmente para você que:</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-16">
+            <div className="flex flex-col items-start gap-4 bg-[#081E3B]/5 p-6 rounded-xl border border-[#CED2D8]">
+              <CheckCircle2 className="w-6 h-6 text-brand-gold shrink-0" />
+              <p className="text-[16px] md:text-lg text-[#081E3B]/80 leading-[1.4] font-light">
+                É <strong className="text-[#081E3B] font-bold">profissional autônomo</strong> ou <strong className="text-[#081E3B] font-bold">especialista</strong> e sente que poderia gerar muito mais resultado nos seus clientes se soubesse lidar melhor com o comportamento das pessoas
+              </p>
+            </div>
+
+            <div className="flex flex-col items-start gap-4 bg-[#081E3B]/5 p-6 rounded-xl border border-[#CED2D8]">
+              <CheckCircle2 className="w-6 h-6 text-brand-gold shrink-0" />
+              <p className="text-[16px] md:text-lg text-[#081E3B]/80 leading-[1.4] font-light">
+                É <strong className="text-[#081E3B] font-bold">líder</strong> ou <strong className="text-[#081E3B] font-bold">gestor</strong> e percebe que muitas vezes o desafio não é ter uma boa estratégia, é fazer as pessoas realmente executarem
+              </p>
+            </div>
+
+            <div className="flex flex-col items-start gap-4 bg-[#081E3B]/5 p-6 rounded-xl border border-[#CED2D8]">
+              <CheckCircle2 className="w-6 h-6 text-brand-gold shrink-0" />
+              <p className="text-[16px] md:text-lg text-[#081E3B]/80 leading-[1.4] font-light">
+                <strong className="text-[#081E3B] font-bold">Trabalha diretamente com pessoas</strong> (atendendo, liderando, orientando ou ensinando) e quer desenvolver uma habilidade que transforma conhecimento em resultado real nas pessoas.
+              </p>
+            </div>
+          </div>
+
+          <p className="text-[16px] md:text-xl text-center text-[#081E3B] font-light leading-relaxed max-w-3xl mx-auto">
+            Se você sente que existe uma metade da sua profissão que ninguém nunca te ensinou, <strong className="font-bold">é exatamente isso que vamos explorar juntos nessa imersão!</strong>
+          </p>
+          <div className="flex justify-center mt-10">
+            <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[14px] md:text-[16px] w-[360px] md:w-auto md:px-20 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-normal md:tracking-wider text-center">
+              QUERO PARTICIPAR DO WORKSHOP!
+            </a>
+          </div>
+          </div>
+        </section>
+
+        {/* Offer */}
+        <section className="pt-[240px] pb-10 md:py-24 px-6 bg-brand-navy bg-[url('/assets/BG%20OFERTA%20MOBILE.webp')] md:bg-[url('/assets/BG%20OFERTA%20DESKTOP.webp')] bg-cover bg-top md:bg-[center_bottom_-50px] bg-no-repeat">
+          <div className="max-w-[360px] md:max-w-[1140px] mx-auto flex justify-center md:justify-start">
+          <div className="max-w-[520px] md:ml-16 bg-brand-navy-light border border-brand-gold/30 rounded-3xl px-5 py-8 text-center shadow-[0_0_50px_rgba(207,168,97,0.1)] relative overflow-hidden">
+
+            {/* Decorative elements */}
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-gold to-transparent"></div>
+
+            <h2 className="text-[28px] md:text-[32px] font-serif text-white mb-6 leading-[1.1]">
+              Ao garantir sua vaga agora, você vai receber:
+            </h2>
+
+            <div className="space-y-3 text-left max-w-xl mx-auto mb-3">
+              <div className="flex items-center gap-4 border-b border-white/5 pb-4">
+                <CheckCircle2 className="w-6 h-6 text-brand-gold shrink-0" />
+                <span className="text-[14px] md:text-lg text-white">2 encontros ao vivo sobre como aplicar comportamento humano na sua carreira</span>
+              </div>
+              <div className="flex items-center gap-4 border-b border-white/5 pb-4">
+                <CheckCircle2 className="w-6 h-6 text-brand-gold shrink-0" />
+                <span className="text-[14px] md:text-lg text-white">6 horas de imersão prática</span>
+              </div>
+              <div className="flex items-center gap-4 border-b border-white/5 pb-4">
+                <CheckCircle2 className="w-6 h-6 text-brand-gold shrink-0" />
+                <span className="text-[14px] md:text-lg text-white">Acesso a 4 mentores indispensáveis, incluindo Carol Rache</span>
+              </div>
+              <div className="flex items-center gap-4 pb-4">
+                <CheckCircle2 className="w-6 h-6 text-brand-gold shrink-0" />
+                <span className="text-[14px] md:text-lg text-white">Apostila completa da Imersão, com os principais frameworks abordados durante o workshop</span>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center gap-4 mb-3">
+              <p className="text-white uppercase tracking-widest text-[14px] md:text-sm text-center font-bold">Tudo isso<br/>por apenas:</p>
+              <div className="text-7xl md:text-8xl font-serif text-brand-gold drop-shadow-lg flex items-center">
+                <span className="text-4xl md:text-4xl mr-1">R$</span>97
+              </div>
+            </div>
+
+            <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="block w-auto bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[12px] md:text-[16px] px-4 md:px-12 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-wider text-center mx-auto">
+              Garantir minha vaga agora
+            </a>
+          </div>
+          </div>
+        </section>
+
+        {/* Recordings Objection */}
+        <section className="pt-6 pb-10 md:pt-8 md:pb-16 px-6 bg-gradient-to-b from-brand-navy-light to-brand-navy">
+          <div className="max-w-[360px] md:max-w-[1140px] mx-auto text-center">
+          <h2 className="text-3xl md:text-[40px] font-serif text-white mb-8">
+            E se eu não puder estar ao vivo?
+          </h2>
+
+          <div className="space-y-6 text-[16px] md:text-lg text-white leading-relaxed font-light text-left md:text-center">
+            <p>
+              Se você sente que esse conteúdo pode ser importante para o seu momento profissional, mas não tem certeza se conseguirá participar ao vivo nos dois dias, fique tranquila.
+            </p>
+            <p>
+              Ao clicar no botão para garantir sua vaga, na próxima página você encontrará a opção de adicionar o <strong className="text-white font-medium">acesso às gravações completas da imersão.</strong>
+            </p>
+            <hr className="border-white/20" />
+            <p>
+              Esse acesso estará disponível por um valor simbólico, justamente para garantir que ninguém deixe de participar da imersão por causa de agenda.
+            </p>
+            <p className="italic text-white">
+              Então, mesmo que você não consiga estar presente ao vivo, ainda assim poderá aproveitar todo o conteúdo desses dois dias.
+            </p>
+          </div>
+          </div>
+        </section>
+
+        {/* Mentors */}
         <section className="py-10 md:py-16 px-6 bg-[url('/assets/BG%20BASE%20DESKTOP.webp')] bg-cover bg-center bg-no-repeat border-y border-white/5">
           <div className="max-w-[360px] md:max-w-[1140px] mx-auto">
             <h2 className="text-3xl md:text-[40px] font-serif text-center text-white mb-10">
@@ -220,16 +498,22 @@ export default function App() {
 
               <div className="space-y-3 md:space-y-6">
                  <img
-                    src="/assets/FOTO PATY.webp"
-                    alt="Paty Perdigão"
+                    src="/assets/FOTO JU.png"
+                    alt="Juliana Chimeli"
                     className="rounded-lg shadow-xl w-full object-cover aspect-square md:aspect-[3/4]"
                   />
-                  <h3 className="text-[40px] font-serif text-white">Paty Perdigão</h3>
+                  <h3 className="text-[40px] font-serif text-white">Juliana Chimeli</h3>
                   <p className="text-white text-[16px] md:text-sm leading-relaxed">
-                    Fundadora da Mentorise, mentora e especialista em desenvolvimento humano, Paty Perdigão dedicou mais de 15 anos à área de Pessoas & Cultura em cargos de liderança, antes de dar um passo corajoso rumo ao seu propósito: <strong className="font-bold">ajudar mulheres a destravarem seus talentos e construírem carreiras com sentido e prosperidade</strong>.
+                    Atua há mais de 15 anos no desenvolvimento humano, integrando <strong className="font-bold">ciência, escuta clínica e abordagens terapêuticas</strong>.
                   </p>
                   <p className="text-white text-[16px] md:text-sm leading-relaxed">
-                    É uma das mentoras do Transcenda e da Formação Acenda sua Luz, ao lado de Carol Rache, acompanhando de perto a jornada de transformação de centenas de mulheres.
+                    É terapeuta com formação em Ciências Médicas e especializações em <strong className="font-bold">Neurociência, Desenvolvimento Infantil e Psicologia Positiva</strong>, além de estudos em Metafísica, Biopsicologia e Leitura Corporal.
+                  </p>
+                  <p className="text-white text-[16px] md:text-sm leading-relaxed">
+                    Coordena o <strong className="font-bold">Núcleo de Terapia Corporal</strong> e a <strong className="font-bold">Escola de Leitura Corporal</strong>, formando e acompanhando pessoas em jornadas de autoconhecimento, saúde emocional e expansão de consciência.
+                  </p>
+                  <p className="text-white text-[16px] md:text-sm leading-relaxed">
+                    No Workshop A Habilidade de Ouro, Juliana vai te <strong className="font-bold">conduzir na leitura do comportamento humano a partir do corpo</strong>, ajudando você a acessar padrões profundos e gerar transformação real nas pessoas.
                   </p>
               </div>
 
@@ -255,293 +539,24 @@ export default function App() {
           </div>
         </section>
 
-        {/* 3ª DOBRA - The Gap */}
-        <section className="py-10 md:py-16 px-6 bg-white">
-          <div className="max-w-[360px] md:max-w-[1140px] mx-auto text-left md:text-center">
-          <h2 className="text-3xl md:text-[40px] font-serif text-[#081E3B] mb-10 text-left md:text-center">
-            O que essas pessoas vão<br className="md:hidden"/> te ensinar nos dias<br className="md:hidden"/> <span className="font-medium">28 e 29 de março:</span>
-          </h2>
-
-          <div className="space-y-4 md:space-y-8 text-[16px] md:text-lg text-[#081E3B] leading-relaxed font-light">
-            <div className="hidden md:flex flex-col md:flex-row gap-6 items-center justify-center">
-              <div className="flex flex-col md:flex-row gap-4 justify-center">
-                <div className="flex items-center justify-center gap-3 border border-brand-gold/30 rounded-lg px-5 py-4 bg-[#081E3B]/5 w-full md:w-auto">
-                  <img src="/assets/CALENDARIO GOLD.svg" alt="" className="h-6 w-auto" />
-                  <div>
-                    <p className="text-[#081E3B] font-bold text-[16px] md:text-lg">2 encontros ao vivo</p>
-                    <p className="text-[#081E3B]/60 text-[14px] md:text-sm">28 e 29 de março</p>
-                  </div>
-                </div>
-                <div className="flex items-center justify-center gap-3 border border-brand-gold/30 rounded-lg px-5 py-4 bg-[#081E3B]/5 w-full md:w-auto">
-                  <Clock className="w-6 h-6 text-brand-gold" />
-                  <div>
-                    <p className="text-[#081E3B] font-bold text-[16px] md:text-lg">Das 9h às 12h</p>
-                    <p className="text-[#081E3B]/60 text-[14px] md:text-sm">Horário de Brasília</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <p>
-              Nós vamos mergulhar exatamente na habilidade que a maioria dos profissionais nunca aprendeu, mas que determina o quanto sua técnica realmente gera resultados.
-            </p>
-            <p className="text-[16px] md:text-xl text-[#081E3B] font-medium md:border-y md:border-brand-gold py-0 md:py-6 w-fit mx-auto">
-              Porque existe um detalhe que quase ninguém percebe durante a formação profissional: você aprende o que fazer.<br className="md:hidden"/> Mas nunca aprende <span className="text-brand-gold italic">como fazer as pessoas realmente aplicarem aquilo que você propõe.</span>
-            </p>
-            <div className="border border-[#CED2D8] rounded-md px-4 py-4 w-fit mx-auto">
-              <p>E é exatamente essa lacuna que vamos começar a preencher juntos.</p>
-            </div>
-            <p>
-              Ao longo desse final de semana, você vai começar a entender por que alguns profissionais extremamente competentes continuam lutando para crescer… enquanto outros conseguem <strong className="font-bold">gerar mais resultado, mais reconhecimento e mais valor</strong> com o mesmo conhecimento técnico.
-            </p>
-          </div>
-          <div className="flex justify-center mt-10">
-          <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[14px] md:text-[16px] px-8 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-normal md:tracking-wider">
-            É DISSO QUE EU PRECISO!
-          </a>
-          </div>
-          <div className="flex flex-col gap-4 mt-8 md:hidden">
-            <img src="/assets/IMG TRANSICAO 1.png" alt="" className="w-full rounded-lg" />
-            <img src="/assets/IMG TRANSICAO 2.png" alt="" className="w-full rounded-lg" />
-          </div>
-          </div>
-        </section>
-
-        {/* 4ª DOBRA - Schedule */}
-        <section className="py-10 md:py-16 px-6 bg-[url('/assets/BG%20BASE%20DESKTOP.webp')] bg-cover bg-center bg-no-repeat" style={{transform: 'scaleX(-1)'}}>
-          <div className="max-w-[360px] md:max-w-[1140px] mx-auto" style={{transform: 'scaleX(-1)'}}>
-            <h2 className="text-3xl md:text-[40px] font-serif text-center text-white mb-10">
-              Cronograma oficial
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-12">
-              {/* Saturday */}
-              <div className="bg-white/10 p-8 md:p-12 rounded-2xl border border-white/10 relative overflow-hidden group hover:border-brand-gold/30 transition-colors">
-                <div className="absolute top-0 left-0 w-1 h-full bg-brand-gold transform origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500"></div>
-                
-                <h3 className="text-[30px] md:text-[36px] font-serif text-brand-gold mb-2">Sábado, 28 de março</h3>
-                <p className="text-[16px] md:text-sm text-white uppercase tracking-wider mb-8 flex items-center gap-2">
-                  <Clock className="w-4 h-4" /> das 9h às 12h
-                </p>
-
-                <div className="space-y-6 text-white font-light leading-relaxed text-[16px] text-left">
-                  <p>No primeiro encontro, nós vamos começar investigando aquilo que quase nunca é discutido na formação profissional: o comportamento humano como o verdadeiro motor dos resultados.</p>
-                  
-                  <p>Você vai perceber que o resultado do seu trabalho não depende apenas da qualidade daquilo que você entrega. Ele também depende do que as pessoas fazem com aquilo que você entrega.</p>
-                  
-                  <div className="bg-white/5 border border-white/10 rounded-xl p-6 my-4">
-                    <ul className="space-y-4">
-                      <li className="flex gap-3 items-start">
-                        <span className="text-brand-gold mt-1">✦</span>
-                        <span>Um nutricionista pode montar o melhor plano alimentar do mundo, mas se o paciente não segue, não existe resultado.</span>
-                      </li>
-                      <li className="flex gap-3 items-start">
-                        <span className="text-brand-gold mt-1">✦</span>
-                        <span>Um líder pode ter a melhor estratégia, mas se a equipe não executa, não existe crescimento.</span>
-                      </li>
-                      <li className="flex gap-3 items-start">
-                        <span className="text-brand-gold mt-1">✦</span>
-                        <span>Um consultor pode trazer a solução perfeita, mas se o cliente não aplica, nada muda.</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <p className="font-medium text-white">Durante a manhã de sábado, você vai começar a enxergar com muita clareza:</p>
-                  
-                  <ul className="space-y-2 pl-4 border-l border-white">
-                    <li>por que conhecimento técnico, sozinho, raramente é suficiente para gerar transformação real nas pessoas</li>
-                    <li>por que alguns profissionais conseguem fazer clientes, pacientes ou equipes realmente avançarem</li>
-                    <li>e por que outros continuam entregando muito… mas vendo pouco resultado acontecer</li>
-                  </ul>
-
-                  <p className="italic text-white mt-6">Esse primeiro encontro vai abrir uma lente completamente nova sobre como seres humanos realmente funcionam.</p>
-                </div>
-              </div>
-
-              {/* Sunday */}
-              <div className="bg-white/10 p-8 md:p-12 rounded-2xl border border-white/10 relative overflow-hidden group hover:border-brand-gold/30 transition-colors">
-                <div className="absolute top-0 left-0 w-1 h-full bg-brand-gold transform origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500"></div>
-                
-                <h3 className="text-[30px] md:text-[36px] font-serif text-brand-gold mb-2">Domingo, 29 de março</h3>
-                <p className="text-[16px] md:text-sm text-white uppercase tracking-wider mb-8 flex items-center gap-2">
-                  <Clock className="w-4 h-4" /> das 9h às 12h
-                </p>
-
-                <div className="space-y-6 text-white font-light leading-relaxed text-[16px] text-left">
-                  <p>Se o sábado é o momento em que você entende o que estava faltando, o domingo será onde começamos a construir essa habilidade na prática.</p>
-                  
-                  <p>Porque entender comportamento humano não é apenas uma teoria interessante. É uma competência que muda completamente a forma como as pessoas respondem a você.</p>
-                  
-                  <p className="font-medium text-white mt-8">No domingo você vai começar a enxergar com muito mais clareza:</p>
-                  
-                  <div className="bg-white/5 border border-white/10 rounded-xl p-6 my-4">
-                    <ul className="space-y-4">
-                      <li className="flex gap-3 items-start">
-                        <span className="text-brand-gold mt-1">✦</span>
-                        <span>Como identificar o que realmente move o comportamento das pessoas</span>
-                      </li>
-                      <li className="flex gap-3 items-start">
-                        <span className="text-brand-gold mt-1">✦</span>
-                        <span>Por que algumas orientações geram adesão… enquanto outras são ignoradas</span>
-                      </li>
-                      <li className="flex gap-3 items-start">
-                        <span className="text-brand-gold mt-1">✦</span>
-                        <span>Como fazer clientes, pacientes ou equipes realmente aplicarem aquilo que você propõe</span>
-                      </li>
-                      <li className="flex gap-3 items-start">
-                        <span className="text-brand-gold mt-1">✦</span>
-                        <span>E como transformar conhecimento técnico em resultado concreto nas pessoas</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <p>Quando essa habilidade começa a aparecer, algo muito interessante acontece. Sua técnica deixa de ser apenas orientação. <strong className="text-white font-medium">Ela passa a gerar transformação.</strong></p>
-                  
-                  <p>As pessoas passam a ter mais resultado com o seu trabalho. E quando as pessoas têm mais resultado com você, três coisas acontecem naturalmente:</p>
-                  
-                  <div className="flex flex-col gap-2 text-brand-gold font-medium">
-                    <span>1. Elas permanecem mais tempo.</span>
-                    <span>2. Elas indicam você para outras pessoas.</span>
-                    <span>3. E o valor do seu trabalho cresce.</span>
-                  </div>
-
-                  <p className="italic text-white mt-6">É por isso que entender comportamento humano se tornou uma das habilidades mais valiosas da atualidade. Não porque ela substitui a sua técnica. Mas porque ela faz a sua técnica finalmente funcionar no mundo real.</p>
-                </div>
-              </div>
-            </div>
-            <div className="text-center mt-12">
-              <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="inline-block bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[14px] md:text-[16px] px-8 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-normal md:tracking-wider">
-                QUERO PARTICIPAR DO WORKSHOP!
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* 5ª DOBRA - Target Audience */}
-        <section className="pt-10 pb-10 md:pt-16 md:pb-16 px-6 bg-white">
-          <div className="max-w-[360px] md:max-w-[1140px] mx-auto">
-          <h2 className="text-3xl md:text-[40px] font-serif text-center text-[#081E3B] mb-4 md:mb-10">
-            Para quem é o <span className="italic text-brand-gold">Workshop<br className="md:hidden"/> A Habilidade de Ouro?</span>
-          </h2>
-
-          <p className="text-[16px] md:text-xl text-center text-[#081E3B]/80 mb-6 md:mb-12">Ele é especialmente para você que:</p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-16">
-            <div className="flex flex-col items-start gap-4 bg-[#081E3B]/5 p-6 rounded-xl border border-[#CED2D8]">
-              <CheckCircle2 className="w-6 h-6 text-brand-gold shrink-0" />
-              <p className="text-[16px] md:text-lg text-[#081E3B]/80 leading-[1.4]">
-                <strong className="text-[#081E3B] font-medium">É profissional autônomo ou especialista</strong> e sente que poderia gerar muito mais resultado nos seus clientes se soubesse lidar melhor com o comportamento das pessoas
-              </p>
-            </div>
-
-            <div className="flex flex-col items-start gap-4 bg-[#081E3B]/5 p-6 rounded-xl border border-[#CED2D8]">
-              <CheckCircle2 className="w-6 h-6 text-brand-gold shrink-0" />
-              <p className="text-[16px] md:text-lg text-[#081E3B]/80 leading-[1.4]">
-                <strong className="text-[#081E3B] font-medium">É líder ou gestor</strong> e percebe que muitas vezes o desafio não é ter uma boa estratégia, é fazer as pessoas realmente executarem
-              </p>
-            </div>
-
-            <div className="flex flex-col items-start gap-4 bg-[#081E3B]/5 p-6 rounded-xl border border-[#CED2D8]">
-              <CheckCircle2 className="w-6 h-6 text-brand-gold shrink-0" />
-              <p className="text-[16px] md:text-lg text-[#081E3B]/80 leading-[1.4]">
-                <strong className="text-[#081E3B] font-medium">Trabalha diretamente com pessoas</strong> (atendendo, liderando, orientando ou ensinando) e quer desenvolver uma habilidade que transforma conhecimento em resultado real nas pessoas.
-              </p>
-            </div>
-          </div>
-
-          <p className="text-[16px] md:text-xl text-center text-[#081E3B] font-medium italic border-y border-brand-gold py-8 w-fit mx-auto">
-            Se você sente que existe uma metade da sua profissão que ninguém nunca te ensinou,<br/> é exatamente isso que vamos explorar juntos nessa imersão!
-          </p>
-          </div>
-        </section>
-
-        {/* 6ª DOBRA - Offer */}
-        <section className="pt-[240px] pb-10 md:py-24 px-6 bg-brand-navy bg-[url('/assets/BG%20OFERTA%20MOBILE.webp')] md:bg-[url('/assets/BG%20OFERTA%20DESKTOP.webp')] bg-cover bg-top md:bg-[center_bottom_-50px] bg-no-repeat">
-          <div className="max-w-[360px] md:max-w-[1140px] mx-auto flex justify-center md:justify-start">
-          <div className="max-w-[520px] md:ml-16 bg-brand-navy-light border border-brand-gold/30 rounded-3xl px-5 py-8 text-center shadow-[0_0_50px_rgba(207,168,97,0.1)] relative overflow-hidden">
-            
-            {/* Decorative elements */}
-            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-gold to-transparent"></div>
-            
-            <h2 className="text-[28px] md:text-[32px] font-serif text-white mb-6 leading-[1.1]">
-              Ao garantir sua vaga agora, você vai receber:
-            </h2>
-
-            <div className="space-y-3 text-left max-w-xl mx-auto mb-3">
-              <div className="flex items-center gap-4 border-b border-white/5 pb-4">
-                <CheckCircle2 className="w-6 h-6 text-brand-gold shrink-0" />
-                <span className="text-[14px] md:text-lg text-white">2 encontros ao vivo sobre como aplicar comportamento humano na sua carreira</span>
-              </div>
-              <div className="flex items-center gap-4 border-b border-white/5 pb-4">
-                <CheckCircle2 className="w-6 h-6 text-brand-gold shrink-0" />
-                <span className="text-[14px] md:text-lg text-white">6 horas de imersão prática</span>
-              </div>
-              <div className="flex items-center gap-4 border-b border-white/5 pb-4">
-                <CheckCircle2 className="w-6 h-6 text-brand-gold shrink-0" />
-                <span className="text-[14px] md:text-lg text-white">Acesso a 4 mentores indispensáveis, incluindo Carol Rache</span>
-              </div>
-              <div className="flex items-center gap-4 pb-4">
-                <CheckCircle2 className="w-6 h-6 text-brand-gold shrink-0" />
-                <span className="text-[14px] md:text-lg text-white">Apostila completa da Imersão, com os principais frameworks abordados durante o workshop</span>
-              </div>
-            </div>
-
-            <div className="flex items-center justify-center gap-4 mb-3">
-              <p className="text-white uppercase tracking-widest text-[14px] md:text-sm text-center font-bold">Tudo isso<br/>por apenas:</p>
-              <div className="text-7xl md:text-8xl font-serif text-brand-gold drop-shadow-lg flex items-center">
-                <span className="text-4xl md:text-4xl mr-1">R$</span>97
-              </div>
-            </div>
-
-            <a href={CHECKOUT_URL} onClick={() => sendCAPI('InitiateCheckout', { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 })} className="block w-auto bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[12px] md:text-[16px] px-4 md:px-12 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(207,168,97,0.3)] uppercase tracking-wider text-center mx-auto">
-              Garantir minha vaga agora
-            </a>
-          </div>
-          </div>
-        </section>
-
-        {/* 7ª DOBRA - Recordings Objection */}
-        <section className="pt-6 pb-10 md:pt-8 md:pb-16 px-6 bg-gradient-to-b from-brand-navy-light to-brand-navy">
-          <div className="max-w-[360px] md:max-w-[1140px] mx-auto text-center">
-          <h2 className="text-3xl md:text-[40px] font-serif text-white mb-8">
-            E se eu não puder estar ao vivo?
-          </h2>
-          
-          <div className="space-y-6 text-[16px] md:text-lg text-white leading-relaxed font-light text-left md:text-center">
-            <p>
-              Se você sente que esse conteúdo pode ser importante para o seu momento profissional, mas não tem certeza se conseguirá participar ao vivo nos dois dias, fique tranquila.
-            </p>
-            <p>
-              Ao clicar no botão para garantir sua vaga, na próxima página você encontrará a opção de adicionar o <strong className="text-white font-medium">acesso às gravações completas da imersão.</strong>
-            </p>
-            <hr className="border-white/20" />
-            <p>
-              Esse acesso estará disponível por um valor simbólico, justamente para garantir que ninguém deixe de participar da imersão por causa de agenda.
-            </p>
-            <p className="italic text-white">
-              Então, mesmo que você não consiga estar presente ao vivo, ainda assim poderá aproveitar todo o conteúdo desses dois dias.
-            </p>
-          </div>
-          </div>
-        </section>
-
-        {/* 8ª DOBRA - Support */}
-        <section className="py-10 md:py-16 px-6 bg-white/5 text-center">
-          <div className="max-w-[360px] md:max-w-[1140px] mx-auto">
-            <h2 className="text-2xl md:text-[40px] font-serif text-white mb-6">
+        {/* Support */}
+        <section className="md:py-16 md:px-6 text-center">
+          <div className="w-full md:max-w-[1140px] mx-auto bg-white md:rounded-xl py-6 px-6 md:py-16 md:px-12">
+            <h2 className="text-2xl md:text-[40px] font-serif text-[#081E3B] mb-2 md:mb-6">
               Tem alguma dúvida?
             </h2>
-            <p className="text-white text-[14px] md:text-[16px] mb-8">É só tocar no botão abaixo<br className="md:hidden" /> e falar com meu time:</p>
-            <button onClick={() => sendCAPI('Contact', { content_name: 'Suporte WhatsApp' })} className="bg-gradient-to-r from-[#0B6D40] to-[#0AD778] hover:from-[#095a35] hover:to-[#08c06a] text-white font-bold text-[13px] md:text-[16px] px-5 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 uppercase tracking-normal md:tracking-wider inline-flex items-center gap-1.5 md:gap-3">
+            <p className="text-[#081E3B]/70 text-[14px] md:text-[16px] mb-4 md:mb-8">É só tocar no botão abaixo<br className="md:hidden" /> e falar com meu time:</p>
+            <a href="https://namah.vc/suporte" target="_blank" rel="noopener noreferrer" onClick={() => sendCAPI('Contact', { content_name: 'Suporte WhatsApp' })} className="bg-gradient-to-r from-[#0B6D40] to-[#0AD778] hover:from-[#095a35] hover:to-[#08c06a] text-white font-bold text-[13px] md:text-[16px] px-5 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 uppercase tracking-normal md:tracking-wider inline-flex items-center gap-1.5 md:gap-3">
               <img src="/assets/WHATSAPP BRANCO.svg" alt="" className="h-5 md:h-6 w-auto shrink-0" />
               Falar com o Suporte no WhatsApp
-            </button>
+            </a>
           </div>
         </section>
 
-        {/* 9ª DOBRA - FAQ */}
-        <section className="py-10 md:py-16 px-6 bg-white">
+        {/* FAQ */}
+        <section className="py-10 md:py-16 px-6 bg-brand-navy">
           <div className="max-w-[360px] md:max-w-[1140px] mx-auto">
-          <h2 className="text-3xl md:text-[40px] font-serif text-center text-[#081E3B] mb-10">
+          <h2 className="text-3xl md:text-[40px] font-serif text-center text-white mb-10">
             Perguntas Frequentes
           </h2>
 
@@ -569,7 +584,7 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-[#081E3B]/10 py-12 px-6 text-center text-sm text-[#081E3B]/40">
+      <footer className="bg-brand-navy border-t border-white/10 py-12 px-6 text-center text-sm text-white/40">
         <div className="max-w-[360px] md:max-w-[1140px] mx-auto">
           <p>Copyright © 2026 Carol Rache<br className="md:hidden"/> Todos os direitos reservados</p>
         </div>
@@ -582,18 +597,18 @@ function FAQItem({ question, answer }: { question: string, answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-[#081E3B]/10">
+    <div className="border-b border-white/10">
       <button
         className="w-full text-left py-6 flex justify-between items-center focus:outline-none group"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <h3 className="text-[16px] md:text-[20px] font-bold text-[#081E3B] group-hover:text-brand-gold transition-colors pr-8" style={{fontFamily: 'var(--font-sans)'}}>{question}</h3>
-        <ChevronDown className={`w-5 h-5 text-[#081E3B]/50 transition-transform duration-300 shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
+        <h3 className="text-[16px] md:text-[20px] font-bold text-white group-hover:text-brand-gold transition-colors pr-8" style={{fontFamily: 'var(--font-sans)'}}>{question}</h3>
+        <ChevronDown className={`w-5 h-5 text-white/50 transition-transform duration-300 shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-0'}`}
       >
-        <p className="text-[#081E3B] text-[16px] font-light leading-relaxed">{answer}</p>
+        <p className="text-white text-[16px] font-light leading-relaxed">{answer}</p>
       </div>
     </div>
   );

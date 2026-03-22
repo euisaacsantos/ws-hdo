@@ -208,7 +208,7 @@ export default function Obrigado() {
               Agora toque no botão abaixo e entre no nosso<br className="hidden md:inline" /> grupo de alunos para receber todos os avisos<br className="hidden md:inline" /> e materiais do workshop:
             </p>
             <a
-              href="https://namah.vc/wk-hdo-grupo-vip"
+              href="https://sndflw.com/i/Pe6VV3otQE05YQvdKgdm"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-gradient-to-r from-[#0B6D40] to-[#0AD778] hover:from-[#095a35] hover:to-[#08c06a] text-white font-bold text-[14px] md:text-[16px] px-8 py-5 rounded-lg transition-all duration-300 transform hover:scale-105 uppercase tracking-wider"

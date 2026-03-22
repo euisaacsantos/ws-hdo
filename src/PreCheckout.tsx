@@ -47,10 +47,44 @@ function sendToAPI(data: { name: string; email: string; phone: string }, source:
   }).catch(() => {});
 }
 
-function trackEvent(eventName: string) {
+function getCookie(name: string): string {
+  const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  return match ? match[2] : '';
+}
+
+function buildFbc(): string {
+  const params = new URLSearchParams(window.location.search);
+  const fbclid = params.get('fbclid');
+  return fbclid ? 'fb.1.' + Date.now() + '.' + fbclid : '';
+}
+
+function sendCAPI(eventName: string, userData?: { name?: string; email?: string; phone?: string }, customData?: Record<string, unknown>) {
+  const eventId = 'eid_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+  const fbp = getCookie('_fbp');
+  const fbc = getCookie('_fbc') || buildFbc();
+
   if (window.fbq) {
-    window.fbq('track', eventName);
+    window.fbq('track', eventName, customData || {}, { eventID: eventId });
   }
+
+  fetch('/api/meta-capi', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      event_name: eventName,
+      event_id: eventId,
+      event_source_url: window.location.href,
+      user_data_client: {
+        ...(fbp && { fbp }),
+        ...(fbc && { fbc }),
+        ...(userData?.email && { em: userData.email }),
+        ...(userData?.phone && { ph: userData.phone }),
+        ...(userData?.name && { fn: userData.name }),
+      },
+      ...(customData && { custom_data: customData }),
+    }),
+    keepalive: true,
+  }).catch(() => {});
 }
 
 function buildHotmartUrl(data: { name: string; email: string; phone: string }): string {
@@ -93,7 +127,7 @@ export default function PreCheckout() {
     if (lead) {
       setAutoRedirecting(true);
       sendToAPI(lead, 'localStorage');
-      trackEvent('AddToCart');
+      sendCAPI('AddToCart', { name: lead.name, email: lead.email, phone: lead.phone }, { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 });
       window.location.href = buildHotmartUrl(lead);
     }
   }, []);
@@ -110,7 +144,7 @@ export default function PreCheckout() {
     setLoading(true);
     const data = { name: name.trim(), email, phone };
     sendToAPI(data, 'form');
-    trackEvent('AddToCart');
+    sendCAPI('AddToCart', { name: data.name, email: data.email, phone: data.phone }, { content_name: 'Workshop Habilidade de Ouro', currency: 'BRL', value: 97.00 });
     saveLeadData(data.name, data.email, data.phone);
     window.location.href = buildHotmartUrl(data);
   }

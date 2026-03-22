@@ -66,10 +66,43 @@ function sendToAPI(email: string, phone: string) {
   }).catch(() => {});
 }
 
-function trackEvent(eventName: string) {
+function getCookie(name: string): string {
+  const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  return match ? match[2] : '';
+}
+
+function buildFbc(): string {
+  const params = new URLSearchParams(window.location.search);
+  const fbclid = params.get('fbclid');
+  return fbclid ? 'fb.1.' + Date.now() + '.' + fbclid : '';
+}
+
+function sendCAPI(eventName: string, userData?: { email?: string; phone?: string }, customData?: Record<string, unknown>) {
+  const eventId = 'eid_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+  const fbp = getCookie('_fbp');
+  const fbc = getCookie('_fbc') || buildFbc();
+
   if (window.fbq) {
-    window.fbq('track', eventName);
+    window.fbq('track', eventName, customData || {}, { eventID: eventId });
   }
+
+  fetch('/api/meta-capi', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      event_name: eventName,
+      event_id: eventId,
+      event_source_url: window.location.href,
+      user_data_client: {
+        ...(fbp && { fbp }),
+        ...(fbc && { fbc }),
+        ...(userData?.email && { em: userData.email }),
+        ...(userData?.phone && { ph: userData.phone }),
+      },
+      ...(customData && { custom_data: customData }),
+    }),
+    keepalive: true,
+  }).catch(() => {});
 }
 
 // ── Component ──
@@ -86,7 +119,7 @@ export default function Credenciamento() {
       setAutoRedirecting(true);
       sendToAPI(lead.email, lead.phone);
       sendToAC(lead.email, lead.phone);
-      trackEvent('Lead');
+      sendCAPI('Lead', { email: lead.email, phone: lead.phone });
       window.location.href = REDIRECT_URL;
     }
   }, []);
@@ -102,7 +135,7 @@ export default function Credenciamento() {
     setLoading(true);
     sendToAPI(email, phone);
     sendToAC(email, phone);
-    trackEvent('Lead');
+    sendCAPI('Lead', { email, phone });
     saveLeadData(email, phone);
     window.location.href = REDIRECT_URL;
   }

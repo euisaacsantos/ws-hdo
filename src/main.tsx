@@ -5,6 +5,7 @@ import App from './App.tsx';
 import Credenciamento from './Credenciamento.tsx';
 import PreCheckout from './PreCheckout.tsx';
 import Obrigado from './Obrigado.tsx';
+import Indicacao from './Indicacao.tsx';
 import './index.css';
 
 createRoot(document.getElementById('root')!).render(
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/credenciamento" element={<Credenciamento />} />
         <Route path="/checkout" element={<PreCheckout />} />
         <Route path="/obrigado" element={<Obrigado />} />
+        <Route path="/indicacao" element={<Indicacao />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

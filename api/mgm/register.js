@@ -33,7 +33,7 @@ module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const { email, nome } = req.body || {};
+  const { email, nome, phone } = req.body || {};
   if (!email || typeof email !== 'string') {
     return res.status(400).json({ error: 'Email é obrigatório' });
   }
@@ -54,7 +54,7 @@ module.exports = async function handler(req, res) {
     const insert = await supabaseQuery('mgm_referrals_hdo', {
       method: 'POST',
       prefer: 'return=representation',
-      body: { email: normalizedEmail, code, nome: nome || null },
+      body: { email: normalizedEmail, code, nome: nome || null, phone: phone || null },
     });
 
     if (insert.status >= 200 && insert.status < 300) {
@@ -63,7 +63,7 @@ module.exports = async function handler(req, res) {
       fetch(UNICHAT_START_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: normalizedEmail, nome: nome || '', code }),
+        body: JSON.stringify({ email: normalizedEmail, nome: nome || '', phone: phone || '', code }),
       }).catch(err => console.error('[UniChat Error]', err.message));
 
       return res.status(201).json({ code, isNew: true });

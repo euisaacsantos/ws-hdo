@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import PhoneInput, { getPhoneDigits, getMinDigits } from './components/PhoneInput';
 
 export default function Indicacao() {
   const navigate = useNavigate();
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('+55');
   const [linkGerado, setLinkGerado] = useState('');
   const [loading, setLoading] = useState(false);
   const [modoRecuperar, setModoRecuperar] = useState(false);
@@ -15,13 +17,15 @@ export default function Indicacao() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!nome.trim() || !email.includes('@')) return;
+    const phoneDigits = getPhoneDigits(phone);
+    if (phoneDigits.length < getMinDigits(phone)) return;
     setLoading(true);
 
     try {
       const res = await fetch('/api/mgm/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email.trim(), nome: nome.trim() }),
+        body: JSON.stringify({ email: email.trim(), nome: nome.trim(), phone }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Erro ao registrar');
@@ -123,6 +127,17 @@ export default function Indicacao() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="voce@email.com"
+                    className="w-full px-4 py-3 border border-[#CED2D8] rounded-xl text-sm text-gray-800 bg-white outline-none focus:border-brand-gold transition-colors placeholder:text-gray-400"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm text-[#081E3B]/60 mb-1.5 font-sans text-left">
+                    WhatsApp
+                  </label>
+                  <PhoneInput
+                    value={phone}
+                    onChange={setPhone}
                     className="w-full px-4 py-3 border border-[#CED2D8] rounded-xl text-sm text-gray-800 bg-white outline-none focus:border-brand-gold transition-colors placeholder:text-gray-400"
                   />
                 </div>

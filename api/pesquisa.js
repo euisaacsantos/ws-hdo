@@ -26,6 +26,10 @@ export default async function handler(req, res) {
     phone,
   } = req.body;
 
+  if (!email || !email.includes('@')) {
+    return res.status(400).json({ error: 'Email é obrigatório' });
+  }
+
   const { error } = await supabase.from('asl0226_hdo_pesquisa').insert({
     evento: 'AHDO-0326',
     faixa_etaria: faixa_etaria || null,

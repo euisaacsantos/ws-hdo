@@ -27,7 +27,9 @@ export default function Indicacao() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: email.trim(), nome: nome.trim(), phone }),
       });
-      const data = await res.json();
+      const text = await res.text();
+      let data;
+      try { data = JSON.parse(text); } catch { throw new Error('Erro no servidor. Tente novamente.'); }
       if (!res.ok) throw new Error(data.error || 'Erro ao registrar');
 
       const code = data.code;
@@ -55,7 +57,9 @@ export default function Indicacao() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: emailRecuperar.trim() }),
       });
-      const data = await res.json();
+      const text = await res.text();
+      let data;
+      try { data = JSON.parse(text); } catch { setLinkRecuperado('nao-encontrado'); return; }
       if (res.ok && data.code) {
         const link = `${window.location.origin}/convite?utm_source=mgm&utm_medium=mgm&utm_term=${data.code}`;
         setLinkRecuperado(link);

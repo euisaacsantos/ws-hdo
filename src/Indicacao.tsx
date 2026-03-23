@@ -67,32 +67,32 @@ export default function Indicacao() {
     <div className="min-h-screen bg-brand-navy text-brand-text font-sans selection:bg-brand-gold selection:text-brand-navy">
 
       {/* 1a DOBRA - Hero + Formulario */}
-      <section className="pt-10 md:pt-20 pb-12 md:pb-24 px-6 bg-[url('/assets/BG1%20MOBILE%202.png')] bg-cover bg-[center_top_-10px] bg-no-repeat md:bg-[url('/assets/BGINDICACAO%20DESKTOP.png')] md:bg-cover md:bg-[center_top_-40px] md:bg-no-repeat relative">
+      <section className="pt-10 md:pt-20 pb-12 md:pb-24 px-6 bg-[url('/assets/BGINDICACAO%20MOBILE.png')] bg-cover bg-top bg-no-repeat md:bg-[url('/assets/BGINDICACAO%20DESKTOP.webp')] md:bg-cover md:bg-[center_top_-40px] md:bg-no-repeat relative">
         <div className="max-w-[360px] md:max-w-[1140px] mx-auto text-center flex flex-col items-center">
 
           {/* Logo */}
-          <img src="/assets/LOGO HDO BRANCO.svg" alt="Workshop A Habilidade de Ouro" className="mb-8 md:mb-10 h-10 md:h-16 w-auto md:hidden" />
+          <img src="/assets/LOGO HDO AZUL.svg" alt="Workshop A Habilidade de Ouro" className="mb-8 md:mb-10 h-10 md:h-16 w-auto md:hidden" />
           <img src="/assets/LOGO HDO AZUL.svg" alt="Workshop A Habilidade de Ouro" className="mb-8 md:mb-10 h-16 w-auto hidden md:block" />
 
           {/* Titulo */}
-          <p className="text-[16px] md:text-[20px] font-sans font-bold text-white md:text-[#081E3B] leading-[1.2] mb-5 uppercase tracking-wider">
-            Programa de Indicação - Formação Ilumina
+          <p className="text-[12px] md:text-[20px] font-sans font-bold text-[#081E3B] leading-[1.4] mb-5 uppercase tracking-wider">
+            Programa de Indicação<br />Formação Ilumina
           </p>
 
-          <p className="text-[28px] md:text-[40px] font-serif text-white md:text-[#081E3B] leading-[1.2] mb-5 max-w-3xl">
+          <p className="text-[28px] md:text-[40px] font-serif text-[#081E3B] leading-[1.2] mb-5 max-w-3xl">
             Ganhe até <span className="text-brand-gold font-medium">R$ 5.000</span> indicando amigos,<br className="hidden md:inline" /> familiares ou conhecidos!
           </p>
 
-          <p className="text-[18px] md:text-[20px] text-white/70 md:text-[#081E3B]/70 leading-[1.5] mb-8 max-w-[680px] font-light">
-            Preencha seus dados, gere um <strong className="font-bold text-white md:text-[#081E3B]">link de indicação exclusivo</strong> para o Workshop: A Habilidade de Ouro e <strong className="font-bold text-white md:text-[#081E3B]">a cada pessoa que entrar para a Formação ao fim dele, você recebe uma bonificação.</strong>
+          <p className="text-[16px] md:text-[20px] text-[#081E3B]/70 leading-[1.5] mb-8 max-w-[680px] font-light">
+            Preencha seus dados, gere um <strong className="font-bold text-[#081E3B]">link de indicação exclusivo</strong> para o Workshop: A Habilidade de Ouro e <strong className="font-bold text-[#081E3B]">a cada pessoa que entrar para a Formação ao fim dele, você recebe uma bonificação.</strong>
           </p>
 
           {/* Formulario */}
           {!linkGerado ? (
-            <div className="w-full max-w-[360px] md:max-w-[900px] bg-white/10 backdrop-blur-md rounded-2xl px-6 py-8 md:px-8 md:py-10 border border-white/10 md:border-[#081E3B]/10 md:bg-[#081E3B]/5 md:backdrop-blur-md">
+            <div className="w-full max-w-[360px] md:max-w-[900px] bg-[#081E3B]/5 backdrop-blur-md rounded-2xl px-6 py-8 md:px-8 md:py-10 border border-[#081E3B]/10">
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label htmlFor="nome" className="block text-sm text-white/60 md:text-[#081E3B]/60 mb-1.5 font-sans text-left">
+                  <label htmlFor="nome" className="block text-sm text-[#081E3B]/60 mb-1.5 font-sans text-left">
                     Nome
                   </label>
                   <input
@@ -102,12 +102,12 @@ export default function Indicacao() {
                     value={nome}
                     onChange={(e) => setNome(e.target.value)}
                     placeholder="Seu nome completo"
-                    className="w-full px-4 py-3 border border-white/20 md:border-[#CED2D8] rounded-xl text-sm text-white md:text-gray-800 bg-white/10 md:bg-white outline-none focus:border-brand-gold transition-colors placeholder:text-white/40 md:placeholder:text-gray-400"
+                    className="w-full px-4 py-3 border border-[#CED2D8] rounded-xl text-sm text-gray-800 bg-white outline-none focus:border-brand-gold transition-colors placeholder:text-gray-400"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm text-white/60 md:text-[#081E3B]/60 mb-1.5 font-sans text-left">
+                  <label htmlFor="email" className="block text-sm text-[#081E3B]/60 mb-1.5 font-sans text-left">
                     E-mail
                   </label>
                   <input
@@ -117,7 +117,7 @@ export default function Indicacao() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="voce@email.com"
-                    className="w-full px-4 py-3 border border-white/20 md:border-[#CED2D8] rounded-xl text-sm text-white md:text-gray-800 bg-white/10 md:bg-white outline-none focus:border-brand-gold transition-colors placeholder:text-white/40 md:placeholder:text-gray-400"
+                    className="w-full px-4 py-3 border border-[#CED2D8] rounded-xl text-sm text-gray-800 bg-white outline-none focus:border-brand-gold transition-colors placeholder:text-gray-400"
                   />
                 </div>
 
@@ -145,7 +145,7 @@ export default function Indicacao() {
                     value={emailRecuperar}
                     onChange={(e) => setEmailRecuperar(e.target.value)}
                     placeholder="Digite o e-mail cadastrado"
-                    className="w-full px-4 py-3 border border-white/20 md:border-[#CED2D8] rounded-xl text-sm text-white md:text-gray-800 bg-white/10 md:bg-white outline-none focus:border-brand-gold transition-colors placeholder:text-white/40 md:placeholder:text-gray-400"
+                    className="w-full px-4 py-3 border border-[#CED2D8] rounded-xl text-sm text-gray-800 bg-white outline-none focus:border-brand-gold transition-colors placeholder:text-gray-400"
                   />
                   <button
                     type="submit"
@@ -154,13 +154,13 @@ export default function Indicacao() {
                     Recuperar link
                   </button>
                   {linkRecuperado && linkRecuperado !== 'nao-encontrado' && (
-                    <div className="bg-green-900/30 md:bg-green-50 border border-green-500/30 md:border-green-200 rounded-xl p-4">
-                      <p className="text-xs text-green-300 md:text-green-700 mb-2 font-sans">Seu link de indicação:</p>
+                    <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+                      <p className="text-xs text-green-700 mb-2 font-sans">Seu link de indicação:</p>
                       <div className="flex items-center gap-2">
                         <input
                           readOnly
                           value={linkRecuperado}
-                          className="flex-1 px-3 py-2 bg-white/10 md:bg-white border border-green-500/30 md:border-green-200 rounded-lg text-xs text-white md:text-gray-800 truncate"
+                          className="flex-1 px-3 py-2 bg-white border border-green-200 rounded-lg text-xs text-gray-800 truncate"
                         />
                         <button
                           onClick={() => copiarLink(linkRecuperado)}
@@ -172,7 +172,7 @@ export default function Indicacao() {
                     </div>
                   )}
                   {linkRecuperado === 'nao-encontrado' && (
-                    <p className="text-xs text-red-400 md:text-red-500 text-center font-sans">
+                    <p className="text-xs text-red-500 text-center font-sans">
                       Nenhum cadastro encontrado com este e-mail.
                     </p>
                   )}
@@ -247,7 +247,7 @@ export default function Indicacao() {
               <span className="text-brand-gold font-bold">R$ 1.000</span> de desconto para ela
             </p>
             <p className="text-[22px] md:text-[30px] text-white leading-[1.4] font-bold">
-              e <span className="text-brand-gold text-[24px] md:text-[32px]">R$ 1.000</span> de bônus para você!
+              <span className="text-brand-gold text-[24px] md:text-[32px]">R$ 1.000</span> de bônus para você!
             </p>
           </div>
 

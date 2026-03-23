@@ -26,7 +26,7 @@ export default function IndicacaoLink() {
 
   function enviarWhatsApp() {
     const texto = encodeURIComponent(
-      `Quero te convidar para o Workshop: A Habilidade de Ouro!\n\nSe inscreve por aqui: ${link}`
+      `Quero te convidar para o Workshop: A Habilidade de Ouro com a Carol Rache!\n\nÉ gratuito e vai acontecer nos dias 28 e 29 de março.\n\nSe inscreve por aqui: ${link}`
     );
     window.open(`https://api.whatsapp.com/send?text=${texto}`, '_blank');
   }

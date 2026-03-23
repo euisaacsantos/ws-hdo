@@ -12,51 +12,55 @@ export default function Indicacao() {
   const [linkRecuperado, setLinkRecuperado] = useState('');
   const [copiado, setCopiado] = useState(false);
 
-  function gerarLink(nomeUsuario: string, emailUsuario: string) {
-    const slug = nomeUsuario
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/(^-|-$)/g, '');
-    const hash = emailUsuario
-      .split('')
-      .reduce((a, c) => ((a << 5) - a + c.charCodeAt(0)) | 0, 0)
-      .toString(36)
-      .replace('-', '');
-    return `${window.location.origin}/convite?ref=${slug}-${hash}`;
-  }
-
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!nome.trim() || !email.includes('@')) return;
     setLoading(true);
 
-    const link = gerarLink(nome, email);
+    try {
+      const res = await fetch('/api/mgm/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email.trim(), nome: nome.trim() }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Erro ao registrar');
 
-    // Salva no localStorage
-    const dados = { nome, email, link, ts: Date.now() };
-    localStorage.setItem('indicacao_data', JSON.stringify(dados));
+      const code = data.code;
+      const link = `${window.location.origin}/convite?utm_source=mgm&utm_medium=mgm&utm_term=${code}`;
 
-    setTimeout(() => {
-      setLoading(false);
+      // Salva no localStorage
+      const dados = { nome, email, code, link, ts: Date.now() };
+      localStorage.setItem('indicacao_data', JSON.stringify(dados));
+
       navigate('/indicacao/link');
-    }, 600);
+    } catch (err) {
+      alert(err instanceof Error ? err.message : 'Erro inesperado');
+    } finally {
+      setLoading(false);
+    }
   }
 
-  function handleRecuperar(e: React.FormEvent) {
+  async function handleRecuperar(e: React.FormEvent) {
     e.preventDefault();
     if (!emailRecuperar.includes('@')) return;
 
-    const raw = localStorage.getItem('indicacao_data');
-    if (raw) {
-      const dados = JSON.parse(raw);
-      if (dados.email === emailRecuperar) {
-        setLinkRecuperado(dados.link);
-        return;
+    try {
+      const res = await fetch('/api/mgm/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: emailRecuperar.trim() }),
+      });
+      const data = await res.json();
+      if (res.ok && data.code) {
+        const link = `${window.location.origin}/convite?utm_source=mgm&utm_medium=mgm&utm_term=${data.code}`;
+        setLinkRecuperado(link);
+      } else {
+        setLinkRecuperado('nao-encontrado');
       }
+    } catch {
+      setLinkRecuperado('nao-encontrado');
     }
-    setLinkRecuperado('nao-encontrado');
   }
 
   function copiarLink(link: string) {

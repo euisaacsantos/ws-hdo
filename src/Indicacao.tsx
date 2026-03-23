@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Indicacao() {
+  const navigate = useNavigate();
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [linkGerado, setLinkGerado] = useState('');
@@ -37,8 +39,8 @@ export default function Indicacao() {
     localStorage.setItem('indicacao_data', JSON.stringify(dados));
 
     setTimeout(() => {
-      setLinkGerado(link);
       setLoading(false);
+      navigate('/indicacao/link');
     }, 600);
   }
 

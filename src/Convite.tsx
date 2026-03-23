@@ -612,13 +612,35 @@ export default function Convite() {
             </p>
 
             <form
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
                 const digits = getPhoneDigits(formPhone);
                 const minDigits = getMinDigits(formPhone);
                 if (digits.length < minDigits) return;
                 if (!formNome.trim() || !formEmail.includes('@')) return;
                 setFormLoading(true);
+
+                // Capturar UTMs (ref code vem do utm_term)
+                const params = new URLSearchParams(window.location.search);
+                const utmSource = params.get('utm_source') || '';
+                const utmMedium = params.get('utm_medium') || '';
+                const utmTerm = params.get('utm_term') || '';
+
+                // Enviar pra API (sendBeacon pra não bloquear)
+                const payload = JSON.stringify({
+                  nome: formNome.trim(),
+                  email: formEmail.trim(),
+                  phone: formPhone,
+                  ref_code: utmTerm || null,
+                  utm_source: utmSource || null,
+                  utm_medium: utmMedium || null,
+                  utm_term: utmTerm || null,
+                });
+                const sent = navigator.sendBeacon('/api/convite-lead', new Blob([payload], { type: 'application/json' }));
+                if (!sent) {
+                  fetch('/api/convite-lead', { method: 'POST', body: payload, headers: { 'Content-Type': 'application/json' }, keepalive: true });
+                }
+
                 sendCAPI('Lead', { content_name: 'Workshop Habilidade de Ouro - Convite' });
                 setTimeout(() => {
                   setFormLoading(false);

@@ -1,5 +1,4 @@
-const SUPABASE_URL = process.env.SUPABASE_URL;
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY;
+import { createClient } from '@supabase/supabase-js';
 
 function generateCode() {
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
@@ -10,28 +9,21 @@ function generateCode() {
   return code;
 }
 
-async function supabaseQuery(path, options = {}) {
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
-    headers: {
-      'apikey': SUPABASE_KEY,
-      'Authorization': `Bearer ${SUPABASE_KEY}`,
-      'Content-Type': 'application/json',
-      'Prefer': options.prefer || '',
-      ...options.headers,
-    },
-    method: options.method || 'GET',
-    body: options.body ? JSON.stringify(options.body) : undefined,
-  });
-  const text = await res.text();
-  return { status: res.status, data: text ? JSON.parse(text) : null };
-}
-
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_SERVICE_KEY;
+
+  if (!supabaseUrl || !supabaseKey) {
+    return res.status(500).json({ error: 'Missing SUPABASE env vars' });
+  }
+
+  const supabase = createClient(supabaseUrl, supabaseKey);
 
   const { email, nome, phone } = req.body || {};
   if (!email || typeof email !== 'string') {
@@ -41,26 +33,26 @@ module.exports = async function handler(req, res) {
   const normalizedEmail = email.trim().toLowerCase();
 
   // Check if email already exists
-  const existing = await supabaseQuery(
-    `mgm_referrals_hdo?email=eq.${encodeURIComponent(normalizedEmail)}&select=code&limit=1`
-  );
-  if (existing.data && existing.data.length > 0) {
-    return res.status(200).json({ code: existing.data[0].code, isNew: false });
+  const { data: existing } = await supabase
+    .from('mgm_referrals_hdo')
+    .select('code')
+    .eq('email', normalizedEmail)
+    .single();
+
+  if (existing) {
+    return res.status(200).json({ code: existing.code, isNew: false });
   }
 
   // Generate unique code with retry
   for (let attempt = 0; attempt < 5; attempt++) {
     const code = generateCode();
-    const insert = await supabaseQuery('mgm_referrals_hdo', {
-      method: 'POST',
-      prefer: 'return=representation',
-      body: { email: normalizedEmail, code, nome: nome || null, phone: phone || null },
-    });
+    const { error } = await supabase
+      .from('mgm_referrals_hdo')
+      .insert({ email: normalizedEmail, code, nome: nome || null, phone: phone || null });
 
-    if (insert.status >= 200 && insert.status < 300) {
-      // Dispara mensagem via UniChat (não bloqueia)
-      const UNICHAT_START_URL = 'https://unnichat.com.br/a/start/arwIEGQQ052zz4lfB7Cy';
-      fetch(UNICHAT_START_URL, {
+    if (!error) {
+      // Disparar UniChat (não bloqueia)
+      fetch('https://unnichat.com.br/a/start/arwIEGQQ052zz4lfB7Cy', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: normalizedEmail, nome: nome || '', phone: phone || '', code }),
@@ -70,8 +62,20 @@ module.exports = async function handler(req, res) {
     }
 
     // Code collision → retry
-    if (insert.status === 409) continue;
+    if (error.code === '23505' && error.message?.includes('code')) continue;
+
+    // Email duplicate (race condition)
+    if (error.code === '23505' && error.message?.includes('email')) {
+      const { data } = await supabase
+        .from('mgm_referrals_hdo')
+        .select('code')
+        .eq('email', normalizedEmail)
+        .single();
+      return res.status(200).json({ code: data?.code, isNew: false });
+    }
+
+    return res.status(500).json({ error: 'Erro ao registrar' });
   }
 
   return res.status(500).json({ error: 'Não foi possível gerar um código único' });
-};
+}

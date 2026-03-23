@@ -24,7 +24,7 @@ export default function Indicacao() {
       .reduce((a, c) => ((a << 5) - a + c.charCodeAt(0)) | 0, 0)
       .toString(36)
       .replace('-', '');
-    return `${window.location.origin}/?ref=${slug}-${hash}`;
+    return `${window.location.origin}/convite?ref=${slug}-${hash}`;
   }
 
   function handleSubmit(e: React.FormEvent) {

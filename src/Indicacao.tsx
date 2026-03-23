@@ -282,6 +282,16 @@ export default function Indicacao() {
             </p>
           </div>
 
+          <div className="text-center mt-8 md:mt-10">
+          <a
+            href="#top"
+            onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+            className="block md:inline-block w-full md:w-auto bg-gradient-to-r from-[#966E16] to-[#D6B865] hover:from-[#7d5c12] hover:to-[#c4a855] text-white font-bold text-[12px] md:text-[16px] px-8 md:px-10 py-4 md:py-5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_50px_rgba(207,168,97,0.5),0_0_100px_rgba(207,168,97,0.25)] uppercase tracking-normal md:tracking-wider cursor-pointer text-center"
+          >
+            UAU! QUERO INDICAR
+          </a>
+          </div>
+
         </div>
       </section>
 

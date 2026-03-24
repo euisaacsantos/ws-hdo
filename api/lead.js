@@ -1,6 +1,12 @@
 import { createClient } from '@supabase/supabase-js';
 
+const UNICHAT_START_URL = 'https://unnichat.com.br/a/start/T6NMAoiGkUyhN3tj50Er';
+
 export default async function handler(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -30,8 +36,14 @@ export default async function handler(req, res) {
 
   if (error) {
     console.error('Supabase insert error:', error);
-    return res.status(500).json({ error: 'Database insert failed' });
   }
+
+  // Disparar UniChat (não bloqueia)
+  fetch(UNICHAT_START_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ nome: nome || '', email: email.trim().toLowerCase(), phone: phone || '' }),
+  }).catch(err => console.error('[UniChat Lead Error]', err.message));
 
   return res.status(200).json({ success: true });
 }

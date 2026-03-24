@@ -39,6 +39,13 @@ export default function Indicacao() {
       const dados = { nome, email, code, link, ts: Date.now() };
       localStorage.setItem('indicacao_data', JSON.stringify(dados));
 
+      // Disparar UniChat (não bloqueia)
+      fetch('https://unnichat.com.br/a/start/arwIEGQQ052zz4lfB7Cy', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nome: nome.trim(), email: email.trim().toLowerCase(), phone: phone || '' }),
+      }).catch(() => {});
+
       navigate('/indicacao/link');
     } catch (err) {
       alert(err instanceof Error ? err.message : 'Erro inesperado');

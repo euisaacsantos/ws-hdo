@@ -635,6 +635,7 @@ export default function Convite() {
                   utm_source: utmSource || null,
                   utm_medium: utmMedium || null,
                   utm_term: utmTerm || null,
+                  page_url: window.location.href,
                 });
                 const sent = navigator.sendBeacon('/api/convite-lead', new Blob([payload], { type: 'application/json' }));
                 if (!sent) {

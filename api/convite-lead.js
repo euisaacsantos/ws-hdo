@@ -18,7 +18,7 @@ export default async function handler(req, res) {
 
   const supabase = createClient(supabaseUrl, supabaseKey);
 
-  const { nome, email, phone, ref_code, utm_source, utm_medium, utm_term } = req.body || {};
+  const { nome, email, phone, ref_code, utm_source, utm_medium, utm_term, page_url } = req.body || {};
 
   if (!email) return res.status(400).json({ error: 'Email é obrigatório' });
 
@@ -32,6 +32,7 @@ export default async function handler(req, res) {
       utm_source: utm_source || null,
       utm_medium: utm_medium || null,
       utm_term: utm_term || null,
+      page_url: page_url || null,
     });
 
   if (error) {

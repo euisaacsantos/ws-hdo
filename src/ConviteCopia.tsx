@@ -619,7 +619,18 @@ export default function ConviteCopia() {
                 if (digits.length < minDigits) return;
                 if (!formNome.trim() || !formEmail.includes('@')) return;
                 setFormLoading(true);
-                sendCAPI('Lead', { content_name: 'Workshop Habilidade de Ouro - Convite' });
+                const payload = JSON.stringify({
+                  nome: formNome.trim(),
+                  email: formEmail.trim(),
+                  phone: formPhone,
+                  page_url: window.location.href,
+                });
+                const sent = navigator.sendBeacon('/api/convite-lead', new Blob([payload], { type: 'application/json' }));
+                if (!sent) {
+                  fetch('/api/convite-lead', { method: 'POST', body: payload, headers: { 'Content-Type': 'application/json' }, keepalive: true });
+                }
+
+                sendCAPI('Lead', { content_name: 'Workshop Habilidade de Ouro - Alunas' });
                 setTimeout(() => {
                   setFormLoading(false);
                   setShowModal(false);

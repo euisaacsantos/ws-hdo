@@ -625,9 +625,9 @@ export default function ConviteCopia() {
                   phone: formPhone,
                   page_url: window.location.href,
                 });
-                const sent = navigator.sendBeacon('/api/convite-lead', new Blob([payload], { type: 'application/json' }));
+                const sent = navigator.sendBeacon('/api/lead', new Blob([payload], { type: 'application/json' }));
                 if (!sent) {
-                  fetch('/api/convite-lead', { method: 'POST', body: payload, headers: { 'Content-Type': 'application/json' }, keepalive: true });
+                  fetch('/api/lead', { method: 'POST', body: payload, headers: { 'Content-Type': 'application/json' }, keepalive: true });
                 }
 
                 sendCAPI('Lead', { content_name: 'Workshop Habilidade de Ouro - Alunas' });

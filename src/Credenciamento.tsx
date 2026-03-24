@@ -61,7 +61,7 @@ function sendToAPI(email: string, phone: string) {
   fetch('/api/credenciamento', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, phone, ...utms }),
+    body: JSON.stringify({ email, phone, ...utms, page_url: window.location.href }),
     keepalive: true,
   }).catch(() => {});
 }

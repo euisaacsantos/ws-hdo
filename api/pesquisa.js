@@ -24,6 +24,7 @@ export default async function handler(req, res) {
     experiencia,
     email,
     phone,
+    page_url,
   } = req.body;
 
   if (!email || !email.includes('@')) {
@@ -41,6 +42,7 @@ export default async function handler(req, res) {
     experiencia: experiencia || null,
     email: email || null,
     phone: phone || null,
+    page_url: page_url || null,
   });
 
   if (error) {

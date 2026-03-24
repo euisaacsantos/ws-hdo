@@ -42,7 +42,7 @@ function sendToAPI(data: { name: string; email: string; phone: string }, source:
   fetch('/api/cpl-checkout', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ ...data, source, ...utms }),
+    body: JSON.stringify({ ...data, source, ...utms, page_url: window.location.href }),
     keepalive: true,
   }).catch(() => {});
 }

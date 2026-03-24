@@ -94,7 +94,7 @@ export default function Obrigado() {
     fetch('/api/pesquisa', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...answers, email, phone }),
+      body: JSON.stringify({ ...answers, email, phone, page_url: window.location.href }),
       keepalive: true,
     }).catch(() => {});
 

@@ -57,7 +57,7 @@ const QUESTIONS = [
   },
 ];
 
-export default function ObrigadoConvite() {
+export default function ObrigadoConvite2() {
   const [answers, setAnswers] = useState<{ [key: string]: string }>({});
   const [currentStep, setCurrentStep] = useState(0);
   const [showContactForm, setShowContactForm] = useState(false);

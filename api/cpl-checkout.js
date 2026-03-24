@@ -26,6 +26,7 @@ export default async function handler(req, res) {
     utm_term,
     fbclid,
     gclid,
+    page_url,
   } = req.body;
 
   if (!email) {
@@ -45,6 +46,7 @@ export default async function handler(req, res) {
     utm_term: utm_term || null,
     fbclid: fbclid || null,
     gclid: gclid || null,
+    page_url: page_url || null,
   });
 
   if (error) {

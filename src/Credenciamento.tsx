@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Lock, Unlock } from 'lucide-react';
 import PhoneInput, { getPhoneDigits, getMinDigits } from './components/PhoneInput';
 
-const REDIRECT_URL = 'https://LINK-DO-EVENTO-AO-VIVO';
+const REDIRECT_URL = 'https://us02web.zoom.us/j/83747334073';
 const AC_FORM_URL = 'https://SEU-ACTIVEHOSTED.activehosted.com/proc.php?jsonp=true';
 const LEAD_TTL_MS = 3 * 24 * 60 * 60 * 1000;
 

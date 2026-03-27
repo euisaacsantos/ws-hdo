@@ -114,6 +114,8 @@ export default function Credenciamento() {
   const [autoRedirecting, setAutoRedirecting] = useState(false);
 
   useEffect(() => {
+    sendCAPI('PageView');
+
     const lead = getLeadData();
     if (lead) {
       setAutoRedirecting(true);
